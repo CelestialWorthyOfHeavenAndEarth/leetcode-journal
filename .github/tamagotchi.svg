@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="400" height="180">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+    .bg { fill: #0d0d0d; }
+    .border { fill: none; stroke: #cc5200; stroke-width: 2; rx: 8; }
+    .pet { animation: bounce 0.8s ease-in-out infinite alternate; transform-origin: 200px 90px; }
+    .leg-l { animation: walk-l 0.4s ease-in-out infinite alternate; transform-origin: 188px 118px; }
+    .leg-r { animation: walk-r 0.4s ease-in-out infinite alternate; transform-origin: 212px 118px; }
+    .eye-l { animation: blink 3s step-end infinite; }
+    .eye-r { animation: blink 3s step-end infinite 0.1s; }
+    .antenna { animation: wave 1.5s ease-in-out infinite alternate; transform-origin: 200px 62px; }
+    .particle { animation: float 2s ease-in-out infinite alternate; }
+    .p2 { animation-delay: 0.5s; }
+    .p3 { animation-delay: 1s; }
+    .scanline { animation: scan 4s linear infinite; }
+    @keyframes bounce { from { transform: translateY(0px); } to { transform: translateY(-6px); } }
+    @keyframes walk-l { from { transform: rotate(-20deg); } to { transform: rotate(20deg); } }
+    @keyframes walk-r { from { transform: rotate(20deg); } to { transform: rotate(-20deg); } }
+    @keyframes blink { 0%,90%,100% { ry: 4; } 95% { ry: 1; } }
+    @keyframes wave { from { transform: rotate(-15deg); } to { transform: rotate(15deg); } }
+    @keyframes float { from { transform: translateY(0) translateX(0); opacity:0.8; } to { transform: translateY(-14px) translateX(4px); opacity:0; } }
+    @keyframes scan { 0% { transform: translateY(0); } 100% { transform: translateY(180px); } }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .label { fill: #cc5200; font-size: 11px; }
+    .mood-text { fill: #ff8040; font-size: 12px; font-weight: 700; }
+    .dim { fill: #333; }
+    .stat-val { fill: #fff; font-size: 13px; font-weight: 700; }
+  </style>
+
+  <!-- Background -->
+  <rect width="400" height="180" rx="10" class="bg"/>
+  <rect x="1" y="1" width="398" height="178" rx="9" fill="none" stroke="#cc5200" stroke-width="1.5"/>
+
+  <!-- Scanline shimmer -->
+  <rect class="scanline" x="0" y="-180" width="400" height="180" rx="10" fill="url(#scan-grad)" opacity="0.03"/>
+  <defs>
+    <linearGradient id="scan-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b2b" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff6b2b" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff6b2b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left panel: pet -->
+  <rect x="8" y="8" width="160" height="164" rx="6" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="88" y="28" text-anchor="middle" class="mono label" font-size="10">LEETCODE PET v1.0</text>
+  <line x1="20" y1="33" x2="156" y2="33" stroke="#cc5200" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Tamagotchi pet (pixel art style) -->
+  <g class="pet">
+    <!-- Antenna -->
+    <g class="antenna">
+      <line x1="200" y1="62" x2="200" y2="52" stroke="#ff8040" stroke-width="2"/>
+      <circle cx="200" cy="50" r="3" fill="#ff8040"/>
+    </g>
+    <!-- Body -->
+    <rect x="180" y="62" width="40" height="36" rx="10" fill="#ff6b2b"/>
+    <!-- Tummy -->
+    <rect x="188" y="72" width="24" height="16" rx="5" fill="#ff8c55" opacity="0.5"/>
+    <!-- Eyes -->
+    <ellipse class="eye-l" cx="191" cy="73" rx="4" ry="4" fill="#0d0d0d"/>
+    <ellipse class="eye-r" cx="209" cy="73" rx="4" ry="4" fill="#0d0d0d"/>
+    <!-- Eye shine -->
+    <circle cx="193" cy="71" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="211" cy="71" r="1.5" fill="white" opacity="0.8"/>
+    <!-- Mouth: happy or sleeping -->
+    <line x1="196" y1="82" x2="204" y2="82" stroke="#0d0d0d" stroke-width="2" stroke-linecap="round"/>
+    <!-- Legs -->
+    <rect class="leg-l" x="184" y="96" width="10" height="14" rx="4" fill="#cc5200"/>
+    <rect class="leg-r" x="206" y="96" width="10" height="14" rx="4" fill="#cc5200"/>
+  </g>
+
+  <!-- Particles -->
+  
+
+  <!-- Mood text -->
+  <text x="88" y="148" text-anchor="middle" class="mono mood-text">Waiting for you...</text>
+
+  <!-- Right panel: stats -->
+  <rect x="176" y="8" width="216" height="164" rx="6" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="284" y="28" text-anchor="middle" class="mono label" font-size="10">SYSTEM STATUS</text>
+  <line x1="184" y1="33" x2="384" y2="33" stroke="#cc5200" stroke-width="0.5" opacity="0.5"/>
+
+  <text x="192" y="56" class="mono" fill="#888" font-size="10">TOTAL SOLVED</text>
+  <text x="192" y="74" class="mono stat-val" font-size="24">000</text>
+
+  <line x1="184" y1="90" x2="384" y2="90" stroke="#1e1e1e" stroke-width="1"/>
+
+  <text x="192" y="108" class="mono" fill="#888" font-size="10">STATUS</text>
+  <text x="192" y="124" class="mono" fill="#ff6b2b" font-size="11">SLEEPING</text>
+
+  <text x="192" y="142" class="mono" fill="#888" font-size="10">ENGINE</text>
+  <text x="192" y="158" class="mono" fill="#ff6b2b" font-size="11">GROQ / LLAMA-3.3-70B</text>
+</svg>
