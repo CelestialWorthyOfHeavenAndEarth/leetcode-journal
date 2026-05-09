@@ -4,11 +4,11 @@
 
 ## Progress
 
-**Total Solved: 1**
+**Total Solved: 2**
 
 | Topic | Easy | Medium | Hard | Total |
 |---|---|---|---|---|
-| Arrays | 0 | 1 | 0 | 1 |
+| Arrays | 0 | 2 | 0 | 2 |
 | Dynamic Programming | 0 | 0 | 0 | 0 |
 | Graphs | 0 | 0 | 0 | 0 |
 | Trees | 0 | 0 | 0 | 0 |
