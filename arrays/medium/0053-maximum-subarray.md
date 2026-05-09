@@ -14,7 +14,7 @@
 > [!NOTE]
 > **Problem Statement**
 >
-> Given an integer array nums, find the subarray with the largest sum, and return its sum.
+> Description not available.
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/maximum-subarray/)**
 
@@ -47,13 +47,13 @@ public:
 
 ### Approach
 
-> The solution uses Kadane's algorithm, which iterates through the array and at each step, it decides whether to continue adding the current element to the current subarray or start a new subarray. This decision is made based on whether the current sum is negative or not. If it's negative, it's better to start fresh with a new subarray. The maximum sum seen so far is updated whenever a larger sum is found. This approach allows us to efficiently find the maximum subarray sum in a single pass through the array. It's a simple yet effective way to solve this problem.
+> This solution uses a technique called Kadane's algorithm, which scans the entire array and at each position finds the maximum sum of the subarray ending at that position. It maintains a running sum of the subarray and updates the maximum sum seen so far. The algorithm also resets the running sum whenever it becomes negative, as a negative sum has no benefit in contributing to the maximum sum. This approach allows the algorithm to efficiently find the maximum subarray in a single pass. The algorithm iterates through the array, updating the maximum sum and the running sum at each step.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because it considers all possible subarrays and keeps track of the maximum sum seen so far. By starting a new subarray whenever the current sum becomes negative, we avoid including negative sums in our result. This ensures that we always consider the subarray with the largest sum.
+> This solution works because it considers all possible subarrays and keeps track of the maximum sum seen so far. By resetting the running sum when it becomes negative, the algorithm avoids including negative sums in the maximum subarray. This ensures that the algorithm finds the maximum subarray with the largest sum.
 
 </details>
 
@@ -63,22 +63,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of elements in the array, because we make a single pass through the array. |
-| **Space:** `O(1)` | , because we only use a constant amount of space to store the current sum and the maximum sum seen so far. |
+| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm makes a single pass through the array. |
+| **Space:** `O(1)` | , because the algorithm uses a constant amount of space to store the running sum and the maximum sum. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to start a new subarray whenever the current sum becomes negative, which allows us to efficiently find the maximum subarray sum.
+> The key insight is to reset the running sum whenever it becomes negative, as this allows the algorithm to efficiently find the maximum subarray.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with array problems that involve finding a maximum or minimum sum, look for opportunities to use Kadane's algorithm or similar techniques that involve iterating through the array and making decisions based on the current sum.
+> When dealing with array problems that involve finding a maximum or minimum sum, look for opportunities to use a running sum and reset it when it becomes negative or positive, depending on the problem requirements.
 
 <br>
 
