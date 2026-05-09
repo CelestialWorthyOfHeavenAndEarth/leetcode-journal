@@ -1,49 +1,66 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=30&pause=1000&color=FF6B2B&center=true&vCenter=true&width=600&lines=%E2%AC%A1+LeetCode+Journal;Automated+DSA+Notes;Powered+by+AI)](https://git.io/typing-svg)
+[![Header](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1500&color=FF6B2B&center=true&vCenter=true&width=700&lines=LeetCode+Journal;Automated+DSA+Notes+on+GitHub;Powered+by+Groq+AI)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 
-**Total Solved: 2**
+<img src=".github/tamagotchi.svg" alt="LeetCode Pet" width="400"/>
+
+[![Total](https://img.shields.io/badge/TOTAL_SOLVED-0-FF6B2B?style=for-the-badge&logo=leetcode&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
+[![Lang](https://img.shields.io/badge/LANGUAGE-C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
+[![AI](https://img.shields.io/badge/AI-GROQ_LLAMA_3.3-5865F2?style=for-the-badge)](https://console.groq.com)
 
 </div>
 
-<br>
+---
 
-> [!NOTE]
-> ### 📊 Progress Dashboard
+```
+  LeetCode Journal — Auto-generated technical notes for every problem solved.
+  Topic-organised, AI-analysed, committed to GitHub on every submission.
+```
 
-| Topic | 🟢 Easy | 🟡 Medium | 🔴 Hard | ✨ Total |
-|:---|:---:|:---:|:---:|:---:|
-| 🏷️ Arrays | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**1**</span> | <span style="color:#ff4b4b">**0**</span> | **1** |
-| 🏷️ Dynamic Programming | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Graphs | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Trees | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Linked Lists | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Sliding Window | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Binary Search | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Two Pointers | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Stack | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Heap | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Backtracking | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Math | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ String | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Greedy | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
-| 🏷️ Bit Manipulation | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
+---
 
-<br>
+## Progress
 
-> [!TIP]
-> ### 🚀 Quick Setup
-> 
-> 1. Create a GitHub repo named `leetcode-journal`
-> 2. Get a free API key at [console.groq.com](https://console.groq.com)
-> 3. Get a [GitHub PAT](https://github.com/settings/tokens) with **repo** scope
-> 4. Load the unpacked extension in Chrome
-> 5. Click the extension icon, enter your keys, and hit **⬡ Save to Journal** on any LeetCode problem!
+| Topic | Easy | Medium | Hard | Total |
+|:------|:----:|:------:|:----:|:-----:|
+| Arrays | 0 | 0 | 0 | 0 |
+| Dynamic Programming | 0 | 0 | 0 | 0 |
+| Graphs | 0 | 0 | 0 | 0 |
+| Trees | 0 | 0 | 0 | 0 |
+| Linked Lists | 0 | 0 | 0 | 0 |
+| Sliding Window | 0 | 0 | 0 | 0 |
+| Binary Search | 0 | 0 | 0 | 0 |
+| Two Pointers | 0 | 0 | 0 | 0 |
+| Stack | 0 | 0 | 0 | 0 |
+| Heap | 0 | 0 | 0 | 0 |
+| Backtracking | 0 | 0 | 0 | 0 |
+| Math | 0 | 0 | 0 | 0 |
+| String | 0 | 0 | 0 | 0 |
+| Greedy | 0 | 0 | 0 | 0 |
+| Bit Manipulation | 0 | 0 | 0 | 0 |
 
-<br>
+---
+
+## Setup
+
+```bash
+# 1. Create a GitHub repository
+git init && gh repo create leetcode-journal --public
+
+# 2. Get your Groq API key
+open https://console.groq.com   # free tier, fast inference
+
+# 3. Get a GitHub Personal Access Token
+open https://github.com/settings/tokens  # scope: repo
+
+# 4. Load the extension
+# chrome://extensions -> Developer Mode -> Load Unpacked
+```
+
+---
 
 <div align="center">
 
-*Auto-generated by [⬡ LeetCode Journal](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal) · Last updated: 2026-05-09*
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=13&duration=4000&pause=2000&color=555555&center=true&vCenter=true&width=500&lines=Auto-generated+by+LeetCode+Journal;Last+updated:+2026-05-09)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 
 </div>
