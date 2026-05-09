@@ -1,64 +1,89 @@
-# 53 · Maximum Subarray
+<div align="center">
 
-> **Difficulty:** Medium · **Topic:** Arrays · **Pattern:** When dealing with array problems that involve finding a maximum or minimum value, look for opportunities to use a simple iterative approach with variables that keep track of the current and maximum values.
-> **Solved:** 2026-05-09 · **Language:** C++
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=24&pause=1000&color=FF6B2B&center=true&vCenter=true&width=600&lines=%E2%AC%A1+53.%20Maximum%20Subarray;Difficulty:+Medium;Topic:+Arrays)](https://git.io/typing-svg)
 
----
+[![Difficulty](https://img.shields.io/badge/Medium-orange?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/maximum-subarray/)
+[![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
+[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-05-09-4caf84?style=for-the-badge&logo=github)](.)
 
-## Problem
+</div>
 
-Given an integer array nums, find the subarray with the largest sum, and return its sum.
+<br>
 
-**[Full problem →](https://leetcode.com/problems/maximum-subarray/)**
+> [!NOTE]
+> **Problem Statement**
+>
+> Given an integer array nums, find the subarray with the largest sum, and return its sum.
+>
+> **[→ Open on LeetCode](https://leetcode.com/problems/maximum-subarray/)**
 
----
+<br>
 
-## Solution
+### Solution
 
 ```cpp
-class Solution {
+class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int n = nums.size();
-        int bag=0;
-        int max_seen= INT_MIN;
-        for(int i=0;i<n;i++){
-            bag+=nums[i];
-            if(bag>max_seen){
-                max_seen=bag;
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        int bag=0;
+        int max_seen= INT_MIN;
+        for(int i=0;i<n;i++){
+            bag+=nums[i];
+            if(bag>max_seen){
+                max_seen=bag;
+            }
+            if(bag<0){
+                bag=0;
+            }
+        }
+        return max_seen;
+    }
+};
 ```
 
----
+<br>
 
-## Approach
+### Approach
 
-This solution uses a simple iterative approach to find the maximum subarray sum. It initializes a variable 'bag' to keep track of the current subarray sum and 'max_seen' to store the maximum sum seen so far. The algorithm iterates through the array, adding each element to 'bag' and updating 'max_seen' if 'bag' is greater. However, the given solution is incomplete as it doesn't handle the case when 'bag' becomes negative, in which case it should be reset to zero to start a new subarray. A complete solution would also reset 'bag' to zero when it becomes negative.
+> The solution uses Kadane's algorithm, which iterates through the array and at each step, it decides whether to continue adding the current element to the current subarray or start a new subarray. This decision is made based on whether the current sum is negative or not. If it's negative, it's better to start fresh with a new subarray. The maximum sum seen so far is updated whenever a larger sum is found. This approach allows us to efficiently find the maximum subarray sum in a single pass through the array. It's a simple yet effective way to solve this problem.
 
-### Why It Works
+<details>
+<summary><strong>Why It Works (Click to expand)</strong></summary>
+<br>
 
-This approach works because it considers all possible subarrays by extending the current subarray one element at a time. By keeping track of the maximum sum seen so far, it ensures that the maximum subarray sum is found. The key to this approach is to correctly handle the case when the current subarray sum becomes negative.
+> This approach works because it considers all possible subarrays and keeps track of the maximum sum seen so far. By starting a new subarray whenever the current sum becomes negative, we avoid including negative sums in our result. This ensures that we always consider the subarray with the largest sum.
 
----
+</details>
 
-## Complexity
+<br>
 
-| | Complexity | Reasoning |
-|---|---|---|
-| Time | O(n) | , where n is the number of elements in the array, because the algorithm makes a single pass through the array. |
-| Space | O(1) | , because the algorithm uses a constant amount of space to store the variables 'bag' and 'max_seen'. |
+### Complexity
 
----
+| Bound | Explanation |
+|:--|:--|
+| **Time:** `O(n)` | , where n is the number of elements in the array, because we make a single pass through the array. |
+| **Space:** `O(1)` | , because we only use a constant amount of space to store the current sum and the maximum sum seen so far. |
 
-## Key Insight
+<br>
 
-> The maximum subarray sum can be found by iteratively extending the current subarray and resetting it when it becomes negative.
+> [!TIP]
+> **Key Insight**
+> 
+> The key insight is to start a new subarray whenever the current sum becomes negative, which allows us to efficiently find the maximum subarray sum.
 
----
+<br>
 
-## Pattern to Remember
+> [!IMPORTANT]
+> **Pattern to Remember**
+>
+> When dealing with array problems that involve finding a maximum or minimum sum, look for opportunities to use Kadane's algorithm or similar techniques that involve iterating through the array and making decisions based on the current sum.
 
-When dealing with array problems that involve finding a maximum or minimum value, look for opportunities to use a simple iterative approach with variables that keep track of the current and maximum values.
+<br>
 
----
+<div align="center">
 
-*Generated by LeetCode Journal · [View Repo](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)*
+*Generated by [⬡ LeetCode Journal](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)*
+
+</div>
