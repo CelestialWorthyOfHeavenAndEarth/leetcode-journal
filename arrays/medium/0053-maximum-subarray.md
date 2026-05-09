@@ -47,13 +47,13 @@ public:
 
 ### Approach
 
-> This solution uses a technique called Kadane's algorithm, which scans the entire array and at each position finds the maximum sum of the subarray ending at that position. It maintains a running sum of the subarray and updates the maximum sum seen so far. The algorithm also resets the running sum whenever it becomes negative, as a negative sum has no benefit in contributing to the maximum sum. This approach allows the algorithm to efficiently find the maximum subarray in a single pass. The algorithm iterates through the array, updating the maximum sum and the running sum at each step.
+> The solution uses a technique called Kadane's algorithm, which scans the entire array and at each position finds the maximum sum of the subarray ending at that position. It maintains a running sum of the current subarray and updates the maximum sum seen so far. If the running sum becomes negative, it resets the running sum to zero, effectively starting a new subarray. This approach allows the algorithm to efficiently find the maximum subarray sum in a single pass through the array. The algorithm iterates through the array, updating the running sum and maximum sum as it goes.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it considers all possible subarrays and keeps track of the maximum sum seen so far. By resetting the running sum when it becomes negative, the algorithm avoids including negative sums in the maximum subarray. This ensures that the algorithm finds the maximum subarray with the largest sum.
+> The algorithm works because it considers all possible subarrays and keeps track of the maximum sum seen so far. By resetting the running sum when it becomes negative, the algorithm avoids including negative sums in the maximum subarray sum. This ensures that the algorithm finds the maximum subarray sum correctly.
 
 </details>
 
@@ -64,21 +64,21 @@ public:
 | Bound | Explanation |
 |:--|:--|
 | **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm makes a single pass through the array. |
-| **Space:** `O(1)` | , because the algorithm uses a constant amount of space to store the running sum and the maximum sum. |
+| **Space:** `O(1)` | , because the algorithm uses a constant amount of space to store the running sum and maximum sum. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to reset the running sum whenever it becomes negative, as this allows the algorithm to efficiently find the maximum subarray.
+> The key insight is that a negative running sum has no benefit, so it can be reset to zero to start a new subarray.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with array problems that involve finding a maximum or minimum sum, look for opportunities to use a running sum and reset it when it becomes negative or positive, depending on the problem requirements.
+> When dealing with array problems that involve finding a maximum or minimum sum, look for opportunities to use Kadane's algorithm or a similar technique to efficiently scan the array and find the optimal solution.
 
 <br>
 
