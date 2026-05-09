@@ -13,7 +13,7 @@
 
 | Topic | 🟢 Easy | 🟡 Medium | 🔴 Hard | ✨ Total |
 |:---|:---:|:---:|:---:|:---:|
-| 🏷️ Arrays | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**2**</span> | <span style="color:#ff4b4b">**0**</span> | **2** |
+| 🏷️ Arrays | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**1**</span> | <span style="color:#ff4b4b">**0**</span> | **1** |
 | 🏷️ Dynamic Programming | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
 | 🏷️ Graphs | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
 | 🏷️ Trees | <span style="color:#4caf84">**0**</span> | <span style="color:#ffb800">**0**</span> | <span style="color:#ff4b4b">**0**</span> | **0** |
