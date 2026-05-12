@@ -4,7 +4,7 @@
 
 <img src=".github/tamagotchi.svg" alt="LeetCode Pet" width="400"/>
 
-[![Total](https://img.shields.io/badge/TOTAL_SOLVED-4-FF6B2B?style=for-the-badge&logo=leetcode&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
+[![Total](https://img.shields.io/badge/TOTAL_SOLVED-5-FF6B2B?style=for-the-badge&logo=leetcode&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 [![Lang](https://img.shields.io/badge/LANGUAGE-C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 [![AI](https://img.shields.io/badge/AI-GROQ_LLAMA_3.3-5865F2?style=for-the-badge)](https://console.groq.com)
 
@@ -35,7 +35,7 @@
 | Heap | 0 | 0 | 0 | 0 |
 | Backtracking | 0 | 0 | 0 | 0 |
 | Math | 0 | 0 | 0 | 0 |
-| String | 0 | 0 | 0 | 0 |
+| String | 1 | 0 | 0 | 1 |
 | Greedy | 0 | 0 | 0 | 0 |
 | Bit Manipulation | 0 | 0 | 0 | 0 |
 
