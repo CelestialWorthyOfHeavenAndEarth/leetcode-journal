@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/missing-number/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-13-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-05-14-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -26,7 +26,7 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-    map<int,int>freq;
+    unordered_map<int,int>freq;
     int n = nums.size();
     for(int i:nums){
         freq[i]++;
@@ -45,13 +45,13 @@ public:
 
 ### Approach
 
-> The solution uses a frequency map to count the occurrences of each number in the array. It then iterates over the range of possible numbers and checks if any number has a frequency less than 1, indicating it's missing from the array. This approach relies on the fact that the array contains distinct numbers in the range [0, n]. The solution also handles the case where the missing number is at the end of the range by iterating up to n.
+> The solution starts by creating a frequency map of the numbers in the input array. It then iterates over the range of possible numbers from 0 to n (inclusive) and checks if each number is present in the frequency map. If a number is not present, it is the missing number. This approach relies on the fact that the input array contains distinct numbers in the range [0, n]. The solution uses an unordered map to store the frequency of each number, allowing for efficient lookups. The time complexity is linear due to the iteration over the input array and the range of possible numbers.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because it accurately counts the occurrences of each number in the array and checks for the missing number in the range. The use of a frequency map allows for efficient lookups of each number's frequency. This ensures that the solution correctly identifies the missing number.
+> The solution works because it correctly identifies the missing number by checking for the absence of a number in the frequency map. The use of an unordered map allows for efficient lookups, and the iteration over the range of possible numbers ensures that the missing number is found. The solution is correct because it handles all possible cases, including the case where the missing number is 0 or n.
 
 </details>
 
@@ -69,7 +69,7 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> The missing number can be found by checking for the first number in the range with a frequency less than 1.
+> The missing number can be found by checking for the absence of a number in the frequency map.
 
 <br>
 
