@@ -78,7 +78,7 @@
   
 
   <!-- Mood text -->
-  <text x="88" y="148" text-anchor="middle" class="mono mood-text">8 solved! Getting strong!</text>
+  <text x="88" y="148" text-anchor="middle" class="mono mood-text">9 solved! Getting strong!</text>
 
   <!-- Right panel: stats -->
   <rect x="176" y="8" width="216" height="164" rx="6" fill="#111" stroke="#1e1e1e" stroke-width="1"/>
@@ -86,7 +86,7 @@
   <line x1="184" y1="33" x2="384" y2="33" stroke="#cc5200" stroke-width="0.5" opacity="0.5"/>
 
   <text x="192" y="56" class="mono" fill="#888" font-size="10">TOTAL SOLVED</text>
-  <text x="192" y="74" class="mono stat-val" font-size="24">008</text>
+  <text x="192" y="74" class="mono stat-val" font-size="24">009</text>
 
   <line x1="184" y1="90" x2="384" y2="90" stroke="#1e1e1e" stroke-width="1"/>
 
