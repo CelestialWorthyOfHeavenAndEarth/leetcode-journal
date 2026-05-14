@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/two-sum/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-09-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-05-14-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -26,19 +26,21 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int sum;
-        int i,j;
-        vector <int> result;
-        for(i=0;i<nums.size();i++){
-            for(j=i+1;j<nums.size();j++){
-                if(nums[i]+nums[j]==target){
-                    result.push_back(i);
-                    result.push_back(j);
-                    break;
-                }
+        int n = nums.size();
+        unordered_map<int,int>mp;
+        int i = 0;
+        for(int x:nums){
+            mp[x]=i;
+            i++;
+        }
+        int rem = 0;
+        for(i=0;i<n;i++){
+            rem = target - nums[i];
+            if(mp.find(rem)!=mp.end()&&mp[rem]!=i){
+                return {i,mp[rem]};
             }
         }
-        return result;
+        return {};
     }
 };
 ```
@@ -47,13 +49,13 @@ public:
 
 ### Approach
 
-> The approach used in this solution is a brute force method, where we are iterating over the array of integers using two nested loops to find a pair of numbers that add up to the target. We are checking every possible pair of numbers in the array to see if their sum equals the target. Once we find a pair that adds up to the target, we add their indices to the result vector and break out of the loops. This solution is straightforward but not the most efficient.
+> The solution uses an unordered map to store the elements of the array as keys and their indices as values. It then iterates over the array to find a pair of elements that add up to the target. For each element, it calculates the remaining value needed to reach the target and checks if this value is present in the map. If it is, and the index of this value is not the same as the current index, it returns the indices of these two elements. This approach allows for efficient lookup of elements in the array.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it checks every possible pair of numbers in the array, so it is guaranteed to find a pair that adds up to the target if one exists. The use of two nested loops allows us to consider all possible pairs of numbers. However, this solution is not optimal due to its high time complexity.
+> This solution works because it takes advantage of the constant-time lookup provided by the unordered map. By storing the elements and their indices in the map, it can quickly check if a pair of elements adds up to the target. The solution also correctly handles cases where there are duplicate elements in the array.
 
 </details>
 
@@ -63,22 +65,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n^2)` |  |
-| **Space:** `O(1)` |  |
+| **Time:** `O(n)` |  |
+| **Space:** `O(n)` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight here is that we can use a more efficient data structure, such as a hash table, to store the numbers we have seen so far and their indices, which would allow us to find a pair that adds up to the target in linear time.
+> Using an unordered map to store elements and their indices enables efficient lookup and solution of the problem.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with problems that involve finding pairs or combinations of elements in an array, look for opportunities to use hash tables or other data structures that allow for efficient lookups and storage of intermediate results.
+> When dealing with problems that require finding pairs or combinations of elements in an array, consider using a hash-based data structure like an unordered map to facilitate efficient lookup.
 
 <br>
 
