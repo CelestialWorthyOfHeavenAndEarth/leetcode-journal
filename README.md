@@ -4,7 +4,7 @@
 
 <img src=".github/tamagotchi.svg" alt="LeetCode Pet" width="400"/>
 
-[![Total](https://img.shields.io/badge/TOTAL_SOLVED-10-FF6B2B?style=for-the-badge&logo=leetcode&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
+[![Total](https://img.shields.io/badge/TOTAL_SOLVED-11-FF6B2B?style=for-the-badge&logo=leetcode&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 [![Lang](https://img.shields.io/badge/LANGUAGE-C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 [![AI](https://img.shields.io/badge/AI-GROQ_LLAMA_3.3-5865F2?style=for-the-badge)](https://console.groq.com)
 
@@ -23,7 +23,7 @@
 
 | Topic | Easy | Medium | Hard | Total |
 |:------|:----:|:------:|:----:|:-----:|
-| Arrays | 9 | 0 | 0 | 9 |
+| Arrays | 10 | 0 | 0 | 10 |
 | Dynamic Programming | 0 | 0 | 0 | 0 |
 | Graphs | 0 | 0 | 0 | 0 |
 | Trees | 0 | 0 | 0 | 0 |
@@ -61,6 +61,6 @@ open https://github.com/settings/tokens  # scope: repo
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=13&duration=4000&pause=2000&color=555555&center=true&vCenter=true&width=500&lines=Auto-generated+by+LeetCode+Journal;Last+updated:+2026-05-15)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=13&duration=4000&pause=2000&color=555555&center=true&vCenter=true&width=500&lines=Auto-generated+by+LeetCode+Journal;Last+updated:+2026-06-17)](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal)
 
 </div>
