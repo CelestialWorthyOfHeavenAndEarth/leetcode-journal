@@ -42,13 +42,13 @@ public:
 
 ### Approach
 
-> The solution uses a frequency map to keep track of the occurrence of each number in the array. It iterates through the array, and for each number, it increments its frequency count in the map. If a number's frequency count exceeds 1, it means the number is a duplicate, so the function returns that number. This approach works because the problem guarantees that there is exactly one duplicate number in the array. The solution has a simple and intuitive implementation.
+> The solution uses an unordered map to store the frequency of each number in the array. It iterates over the array, and for each number, it increments its frequency in the map. If the frequency of a number exceeds 1, it means that number is a duplicate, so the function returns that number. This approach works because the problem guarantees that there is exactly one duplicate number in the array. The solution takes advantage of this guarantee to find the duplicate number efficiently.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because it correctly identifies the duplicate number by counting the frequency of each number in the array. The problem's constraints, such as the range of numbers and the presence of exactly one duplicate, ensure that this approach will always find the correct solution. The use of an unordered map allows for efficient lookups and updates of frequency counts.
+> The solution works because it correctly identifies the first number that appears more than once in the array, which is the duplicate number. The use of an unordered map allows for efficient lookups and frequency updates. The solution returns the correct duplicate number because it checks the frequency of each number as it iterates over the array.
 
 </details>
 
@@ -58,22 +58,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` |  |
-| **Space:** `O(n)` |  |
+| **Time:** `The time complexity is O(n) because the solution iterates over the array once, where n is the number of elements in the array.` |  |
+| **Space:** `The space complexity is O(n) because in the worst case, the solution stores every number in the array in the unordered map.` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> Using a frequency map to count the occurrences of each number allows for efficient detection of the duplicate number.
+> Using an unordered map to store frequencies allows for efficient detection of the duplicate number.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with arrays and duplicates, consider using frequency maps or sets to keep track of unique elements and detect duplicates.
+> When dealing with arrays and duplicates, consider using a frequency map to keep track of the occurrences of each number.
 
 <br>
 
