@@ -49,13 +49,13 @@ public:
 
 ### Approach
 
-> The solution uses a three-pointer technique, where low, mid, and high pointers are used to track the positions of the next red, current, and next blue elements respectively. The algorithm iterates through the array, swapping elements to maintain the correct order. If the current element is red (0), it is swapped with the element at the low pointer, and both low and mid pointers are moved forward. If the current element is white (1), the mid pointer is moved forward. If the current element is blue (2), it is swapped with the element at the high pointer, and the high pointer is moved backward.
+> This solution uses the Dutch National Flag algorithm, a variation of the quicksort algorithm. It initializes three pointers: low, mid, and high, representing the positions where the next 0, 1, and 2 should be placed respectively. The algorithm iterates through the array, swapping elements to maintain the correct order. The mid pointer moves forward when it encounters a 1, and the low and high pointers are adjusted accordingly when 0s and 2s are encountered.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because it ensures that all elements less than the current element are red, and all elements greater than the current element are blue. The mid pointer is used to track the current element being processed, and the low and high pointers are used to track the positions of the next red and blue elements respectively.
+> This approach works because it ensures that all elements less than the mid pointer are 0s, and all elements greater than the high pointer are 2s. The mid pointer acts as a boundary between the 0s and 1s, and the 1s and 2s, maintaining the correct order. This results in a sorted array with all 0s first, followed by 1s, and then 2s.
 
 </details>
 
@@ -65,7 +65,7 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm makes a single pass through the array. |
+| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm only makes one pass through the array. |
 | **Space:** `O(1)` | , because the algorithm only uses a constant amount of space to store the pointers. |
 
 <br>
@@ -73,14 +73,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to use three pointers to track the positions of the next red, current, and next blue elements, allowing for efficient sorting in a single pass.
+> The key to this solution is the use of three pointers to divide the array into three sections, allowing for efficient sorting in a single pass.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with problems that require sorting or partitioning an array based on certain conditions, look for opportunities to use multiple pointers to track different segments of the array.
+> When faced with a problem that requires sorting or partitioning an array based on certain conditions, look for opportunities to use multiple pointers to divide the array into sections.
 
 <br>
 
