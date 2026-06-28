@@ -49,13 +49,13 @@ public:
 
 ### Approach
 
-> The approach used here is known as the Dutch National Flag algorithm, which is a variation of the quicksort algorithm. It uses three pointers, low, mid, and high, to partition the array into three parts. The low pointer is used to track the position where the next 0 should be placed, the mid pointer is used to scan the array, and the high pointer is used to track the position where the next 2 should be placed. This algorithm works by iterating through the array and swapping elements as necessary to maintain the correct order.
+> This solution uses the Dutch National Flag algorithm, a variation of the quicksort algorithm. It initializes three pointers: low, mid, and high, representing the positions where the next 0, 1, and 2 should be placed respectively. The algorithm then iterates through the array, swapping elements as necessary to maintain the correct order. The mid pointer is used to scan the array, and the low and high pointers are used to track the positions of the next 0 and 2 respectively. By iterating through the array and swapping elements, the algorithm is able to sort the colors in-place.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This algorithm works because it ensures that all 0s are placed before all 1s, and all 1s are placed before all 2s. The use of three pointers allows for efficient partitioning of the array. The algorithm terminates when the mid pointer meets the high pointer, at which point the array is sorted.
+> This algorithm works because it maintains a clear separation between the different colors, ensuring that all 0s are placed before all 1s, and all 1s are placed before all 2s. The use of three pointers allows the algorithm to efficiently scan the array and make the necessary swaps. The algorithm's correctness is also due to the fact that it only swaps elements when necessary, avoiding unnecessary operations.
 
 </details>
 
@@ -73,14 +73,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight here is to use three pointers to partition the array into three parts, allowing for efficient sorting of the array in a single pass.
+> The key insight is to use three pointers to separate the different colors, allowing for efficient sorting in-place.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When faced with a problem that requires partitioning an array into multiple parts, consider using a variation of the quicksort algorithm, such as the Dutch National Flag algorithm.
+> When faced with a problem that requires sorting or partitioning an array based on certain conditions, look for opportunities to use multiple pointers to separate the different elements.
 
 <br>
 
