@@ -1,154 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 220" width="500" height="220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
   <defs>
-    <!-- Hand-drawn wobbly line filter -->
-    <filter id="wobbly" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" seed="2" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <!-- Soft paper texture filter -->
-    <filter id="paperTexture" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch" result="noise"/>
-      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
-      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
-    </filter>
-    <!-- Soft shadow for the pet -->
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
-      <feOffset dx="2" dy="3" result="offsetBlur"/>
-      <feFlood flood-color="#c9bfab" flood-opacity="0.4" result="color"/>
-      <feComposite in="color" in2="offsetBlur" operator="in" result="shadow"/>
-      <feMerge>
-        <feMergeNode in="shadow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#d2a8ff"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;display=swap');
-    .hand-font { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; }
-    .doodle-text { font-family: 'Patrick Hand', cursive; fill: #8b7355; }
-
-    /* Gentle floating bob */
-    .bob { animation: bob 3s ease-in-out infinite; transform-origin: 125px 110px; }
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    /* Slow blink */
-    .blink { animation: blink 4s ease-in-out infinite; }
-    @keyframes blink {
-      0%, 42%, 46%, 100% { opacity: 1; }
-      44% { opacity: 0; }
-    }
-
-    /* Subtle breathing scale pulse */
-    .breathe { animation: breathe 3.5s ease-in-out infinite; transform-origin: 125px 110px; }
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-    }
-
-    /* Twinkle for stars */
-    .twinkle { animation: twinkle 2.5s ease-in-out infinite; }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.4; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.1); }
-    }
-
-    /* Floating heart */
-    .float-heart { animation: floatHeart 3s ease-in-out infinite; }
-    @keyframes floatHeart {
-      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-      50% { transform: translateY(-6px) scale(1.08); opacity: 0.9; }
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap');
+    .label { font-family: 'Inter', sans-serif; font-size: 11px; fill: #8b949e; }
+    .value { font-family: 'Inter', sans-serif; font-weight: 700; fill: #c9d1d9; }
+    .title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; fill: #f0f6fc; }
+    .subtitle { font-family: 'Inter', sans-serif; font-size: 12px; fill: #8b949e; }
+    .float { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
   </style>
 
-  <!-- Warm textured paper background -->
-  <rect width="500" height="220" rx="12" fill="#faf3e0" filter="url(#paperTexture)"/>
-  <!-- Subtle border like a torn notebook edge -->
-  <rect x="3" y="3" width="494" height="214" rx="10" fill="none" stroke="#d4c5a0" stroke-width="1.5" stroke-dasharray="8 4" filter="url(#wobbly)"/>
+  <!-- Background -->
+  <rect width="800" height="200" rx="12" fill="url(#bgGrad)"/>
+  <rect x="1" y="1" width="798" height="198" rx="11" fill="none" stroke="#30363d" stroke-width="1"/>
 
-  <!-- Doodled corner flourishes -->
-  <path d="M16,16 Q22,8 30,14 Q26,20 18,18" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
-  <path d="M484,16 Q478,8 470,14 Q474,20 482,18" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
-  <path d="M16,204 Q22,212 30,206 Q26,200 18,202" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
-  <path d="M484,204 Q478,212 470,206 Q474,200 482,202" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
+  <!-- Top glow accent -->
+  <rect width="800" height="80" rx="12" fill="url(#glowGrad)"/>
 
-  <!-- Pet creature -->
-  <g class="bob">
-    <g class="breathe" filter="url(#softShadow)">
-      <!-- Body (round blob) -->
-      <ellipse cx="125" cy="112" rx="38" ry="34" fill="#e8a87c" filter="url(#wobbly)"/>
-      <!-- Belly highlight -->
-      <ellipse cx="125" cy="118" rx="24" ry="18" fill="#f5dcc0" opacity="0.6" filter="url(#wobbly)"/>
-
-      <!-- Tiny ears -->
-      <ellipse cx="98" cy="86" rx="8" ry="10" fill="#e8a87c" filter="url(#wobbly)"/>
-      <ellipse cx="98" cy="86" rx="5" ry="6" fill="#d4a5a5" filter="url(#wobbly)"/>
-      <ellipse cx="152" cy="86" rx="8" ry="10" fill="#e8a87c" filter="url(#wobbly)"/>
-      <ellipse cx="152" cy="86" rx="5" ry="6" fill="#d4a5a5" filter="url(#wobbly)"/>
-
-      <!-- Open dot eyes with blink -->
-     <g class="blink">
-       <circle cx="113" cy="102" r="3.5" fill="#5d4037" filter="url(#wobbly)"/>
-       <circle cx="137" cy="102" r="3.5" fill="#5d4037" filter="url(#wobbly)"/>
-       <circle cx="114.5" cy="100.5" r="1" fill="#faf3e0"/>
-       <circle cx="138.5" cy="100.5" r="1" fill="#faf3e0"/>
-     </g>
-
-      <!-- Rosy cheeks -->
-      <ellipse cx="103" cy="112" rx="7" ry="5" fill="#d4a5a5" opacity="0.55" filter="url(#wobbly)"/>
-      <ellipse cx="147" cy="112" rx="7" ry="5" fill="#d4a5a5" opacity="0.55" filter="url(#wobbly)"/>
-
-      <!-- Mouth -->
-      <path d="M115,116 Q125,128 135,116" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round" filter="url(#wobbly)"/>
-
-      <!-- Tiny arms -->
-      <path d="M87,110 Q78,115 82,124" fill="none" stroke="#e8a87c" stroke-width="4" stroke-linecap="round" filter="url(#wobbly)"/>
-      <path d="M163,110 Q172,115 168,124" fill="none" stroke="#e8a87c" stroke-width="4" stroke-linecap="round" filter="url(#wobbly)"/>
-
-      <!-- Tiny feet -->
-      <ellipse cx="112" cy="145" rx="9" ry="5" fill="#e8a87c" filter="url(#wobbly)"/>
-      <ellipse cx="138" cy="145" rx="9" ry="5" fill="#e8a87c" filter="url(#wobbly)"/>
-    </g>
+  <!-- Mascot area -->
+  <g class="float">
+    <!-- Body -->
+    <circle cx="70" cy="100" r="30" fill="#21262d" stroke="#30363d" stroke-width="1.5"/>
+    <!-- Inner ring -->
+    <circle cx="70" cy="100" r="24" fill="none" stroke="#3fb950" stroke-width="0.5" opacity="0.4"/>
+    <!-- Eyes -->
+    <circle cx="60" cy="94" r="3" fill="#c9d1d9"><animate attributeName="ry" values="3;0.5;3" dur="4s" repeatCount="indefinite" keyTimes="0;0.48;0.52" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" calcMode="spline"/></circle><circle cx="80" cy="94" r="3" fill="#c9d1d9"><animate attributeName="ry" values="3;0.5;3" dur="4s" repeatCount="indefinite" keyTimes="0;0.48;0.52" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" calcMode="spline"/></circle>
+    <!-- Mouth -->
+    <path d="M64,104 Q70,110 76,104" fill="none" stroke="#c9d1d9" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Antenna -->
+    <line x1="70" y1="70" x2="70" y2="58" stroke="#30363d" stroke-width="2"/>
+    <circle cx="70" cy="55" r="4" fill="#3fb950" filter="url(#glow)" class="pulse"/>
   </g>
 
-  <!-- Decorative doodles -->
-  <!-- Happy: stars and a small cloud -->
-     <g filter="url(#wobbly)" class="twinkle">
-       <polygon points="78,55 80,49 82,55 88,55 83,59 85,65 80,61 75,65 77,59 72,55" fill="#e8a87c" opacity="0.8"/>
-     </g>
-     <g filter="url(#wobbly)" class="twinkle" style="animation-delay:0.5s;">
-       <polygon points="170,48 172,42 174,48 180,48 175,52 177,58 172,54 167,58 169,52 164,48" fill="#d4a5a5" opacity="0.7"/>
-     </g>
-     <!-- Cloud doodle -->
-     <g filter="url(#wobbly)" opacity="0.35">
-       <ellipse cx="60" cy="42" rx="12" ry="7" fill="#c9bfab"/>
-       <ellipse cx="72" cy="40" rx="10" ry="8" fill="#c9bfab"/>
-       <ellipse cx="80" cy="44" rx="9" ry="6" fill="#c9bfab"/>
-     </g>
+  <!-- Title block -->
+  <text x="120" y="42" class="title">LeetCode Journal</text>
+  <text x="120" y="60" class="subtitle">Automated DSA notes -- approach, complexity, insights</text>
 
-  <!-- Hand-drawn speech bubble -->
-  <g filter="url(#wobbly)">
-    <path d="M220,80 Q220,58 280,58 Q380,58 380,80 Q380,102 320,102 L270,102 L258,115 L262,102 Q220,102 220,80Z" fill="#fffdf5" stroke="#8b7355" stroke-width="1.5"/>
-  </g>
-  <text x="300" y="76" text-anchor="middle" class="hand-font" fill="#5d4037" font-size="12" filter="url(#wobbly)">i love solving puzzles with you!</text>
-  
+  <!-- Divider -->
+  <line x1="120" y1="72" x2="780" y2="72" stroke="#21262d" stroke-width="1"/>
 
-  <!-- Stats area on the right -->
-  <g filter="url(#wobbly)">
-    <!-- Notebook label style -->
-    <rect x="320" y="125" width="155" height="70" rx="6" fill="#fffdf5" stroke="#c9bfab" stroke-width="1.2"/>
-    <!-- Ruled lines -->
-    <line x1="328" y1="148" x2="467" y2="148" stroke="#e2d9c8" stroke-width="0.7"/>
-    <line x1="328" y1="168" x2="467" y2="168" stroke="#e2d9c8" stroke-width="0.7"/>
-  </g>
-  <text x="397" y="142" text-anchor="middle" class="hand-font" fill="#8b7355" font-size="11" filter="url(#wobbly)">mood: happy</text>
-  <text x="397" y="162" text-anchor="middle" class="hand-font" fill="#5d4037" font-size="14" filter="url(#wobbly)">problems solved</text>
-  <text x="397" y="186" text-anchor="middle" class="hand-font" fill="#e8a87c" font-size="26" font-weight="bold" filter="url(#wobbly)">16</text>
+  <!-- Stats row -->
+  <text x="120" y="100" class="label">SOLVED</text>
+  <text x="120" y="120" class="value" font-size="28">16</text>
 
-  <!-- Title -->
-  <text x="250" y="24" text-anchor="middle" class="hand-font" fill="#8b7355" font-size="14" filter="url(#wobbly)">~ my leetcode pet ~</text>
+  <text x="220" y="100" class="label">STATUS</text>
+  <text x="220" y="118" class="value" font-size="14" fill="#3fb950">IN THE ZONE</text>
+
+  <text x="380" y="100" class="label">ENGINE</text>
+  <text x="380" y="118" class="value" font-size="13">Groq / Llama 3.3 70B</text>
+
+  <text x="570" y="100" class="label">LANGUAGE</text>
+  <text x="570" y="118" class="value" font-size="13">C++</text>
+
+  <!-- Progress bar -->
+  <text x="120" y="152" class="label">PROGRESS</text>
+  <rect x="120" y="160" width="320" height="8" rx="4" fill="#21262d"/>
+  <rect x="120" y="160" width="51" height="8" rx="4" fill="url(#barGrad)">
+    <animate attributeName="width" from="0" to="51" dur="1.5s" fill="freeze"/>
+  </rect>
+  <text x="450" y="169" class="label">16/100</text>
+
+  <!-- Bottom border accent -->
+  <rect x="120" y="186" width="660" height="1" fill="#21262d"/>
+  <rect x="120" y="186" width="160" height="1" fill="#3fb950" opacity="0.5"/>
 </svg>
