@@ -1,60 +1,26 @@
+# 📓 LeetCode Journal
+
+> A minimal, continuous learning log for algorithmic problem solving.
+
 <div align="center">
-
-<img src="https://i.imgur.com/eBwI6W9.png" width="400" alt="Leetcode Neural Journal Banner"/>
-<br>
-
-<table style="border: none; background: transparent;">
-  <tr style="border: none;">
-    <td align="center" style="border: none;">
-      <img src="https://media.tenor.com/FBeNVFjn-EkAAAAC/cat-hacking.gif" height="250" style="border-radius: 12px;"/>
-    </td>
-    <td align="center" style="border: none;">
-      <img src=".github/tamagotchi.svg" alt="LeetCode Dashboard" height="250"/>
-    </td>
-  </tr>
-</table>
-
-<br>
-
-<table>
-<tr>
-<td align="center" width="140">
-<br>
-<strong>16</strong><br>
-<sub>TOTAL EXP</sub><br><br>
-</td>
-<td align="center" width="140">
-<br>
-<strong>14</strong><br>
-<sub>EASY</sub><br><br>
-</td>
-<td align="center" width="140">
-<br>
-<strong>2</strong><br>
-<sub>MEDIUM</sub><br><br>
-</td>
-<td align="center" width="140">
-<br>
-<strong>0</strong><br>
-<sub>HARD</sub><br><br>
-</td>
-</tr>
-</table>
-
+  <img src=".github/tamagotchi.svg?v=1782684752928" alt="LeetCode Stats Dashboard" />
 </div>
 
----
+## 📋 Overview
+Tracking my progress on data structures and algorithms in a clean, Notion-inspired format. 
 
-### 🚀 SYSTEM // INIT
-> **Automated LeetCode Tracker** powered by AI. 
-> Extracts approaches, computes complexities, and commits structured notes straight to the mainframe.
+### 📊 Current Statistics
+| Difficulty | Solved |
+| :--- | :--- |
+| **Easy** | 14 |
+| **Medium** | 2 |
+| **Hard** | 0 |
+| **Total** | **16** |
 
----
-
-### 📊 KNOWLEDGE_MATRIX
+## 📝 Recent Problems
 
 | Topic | Easy | Medium | Hard | Total |
-|:--|:--:|:--:|:--:|:--:|
+| :--- | :---: | :---: | :---: | :---: |
 | Arrays | 12 | 2 | 0 | 14 |
 | Linked Lists | 1 | 0 | 0 | 1 |
 | String | 1 | 0 | 0 | 1 |
@@ -72,20 +38,4 @@
 | Bit Manipulation | 0 | 0 | 0 | 0 |
 
 ---
-
-### 💻 BOOT_SEQUENCE
-
-```bash
-# 1. Initialize a GitHub repository named leetcode-journal
-# 2. Acquire Groq API key (console.groq.com)
-# 3. Mount GitHub PAT (github.com/settings/tokens)
-# 4. Inject extension in Chrome (Developer Mode)
-# 5. Execute -> Save to Journal
-```
-
-<div align="center">
-<br>
-<sub>Last Neural Sync: 2026-06-28 // LeetCode.journal</sub>
-<br>
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDI2eHFhbnZyeDFnMDhwNmhxNXgyZHlyN3g3anU2eHpzMG9yeHpqaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif" width="150" />
-</div>
+*Generated automatically by LeetCode Note Maker*
