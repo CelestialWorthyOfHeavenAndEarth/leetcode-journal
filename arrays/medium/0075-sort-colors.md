@@ -49,13 +49,13 @@ public:
 
 ### Approach
 
-> The approach used here is known as the Dutch National Flag algorithm, which is a variation of the quicksort algorithm. It uses three pointers, low, mid, and high, to partition the array into three parts. The low pointer is used to track the position where the next 0 should be placed, the mid pointer is used to scan the array, and the high pointer is used to track the position where the next 2 should be placed. The algorithm iterates through the array, swapping elements as necessary to maintain the correct order. This approach is efficient and easy to implement.
+> This solution uses the Dutch National Flag algorithm, a variation of the quicksort algorithm that works well for sorting arrays with a limited number of distinct elements. It initializes three pointers: low, mid, and high, to keep track of the positions where the next 0, 1, and 2 should be placed respectively. The algorithm iterates through the array, swapping elements as necessary to maintain the correct order. By doing so, it ensures that all elements are sorted in-place without requiring any additional space.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This algorithm works because it correctly partitions the array into three parts, with all 0s on the left, all 1s in the middle, and all 2s on the right. The use of three pointers allows the algorithm to make a single pass through the array, making it efficient. The swapping of elements ensures that the correct order is maintained.
+> The algorithm works because it correctly handles the placement of each color, ensuring that all 0s are placed before all 1s, and all 1s are placed before all 2s. This is achieved by swapping elements and incrementing or decrementing the pointers accordingly. The algorithm's correctness is also due to the fact that it only swaps elements when necessary, avoiding unnecessary swaps.
 
 </details>
 
@@ -66,21 +66,21 @@ public:
 | Bound | Explanation |
 |:--|:--|
 | **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm makes a single pass through the array. |
-| **Space:** `O(1)` | , because the algorithm only uses a constant amount of space to store the pointers. |
+| **Space:** `O(1)` | , because the algorithm only uses a constant amount of space to store the pointers and does not require any additional space that scales with the input size. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight here is that the use of three pointers allows the algorithm to efficiently partition the array into three parts.
+> The key to this algorithm is the use of three pointers to track the positions of the next 0, 1, and 2, allowing for efficient in-place sorting.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When faced with a problem that requires partitioning an array into multiple parts, look for opportunities to use multiple pointers to simplify the solution.
+> When faced with a problem that involves sorting or rearranging elements in an array, look for opportunities to use a limited number of pointers to track the positions of key elements and simplify the problem.
 
 <br>
 
