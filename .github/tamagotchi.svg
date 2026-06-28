@@ -1,74 +1,154 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="500" height="200">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
-    .bg { fill: #0d0d0d; }
-    .border { fill: none; stroke: #FF5500; stroke-width: 1; rx: 4; }
-    .text-primary { fill: #FF5500; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; }
-    .text-secondary { fill: #888888; font-family: 'JetBrains Mono', monospace; font-size: 10px; }
-    .text-value { fill: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; }
-    .pixel { fill: #FF5500; }
-    .pixel-dark { fill: #0d0d0d; }
-    
-    /* Animations */
-    .float { animation: float 2s ease-in-out infinite alternate; }
-    .blink { animation: blink 4s step-end infinite; }
-    .walk { animation: walk 0.5s steps(2, end) infinite; }
-    .glow { animation: pulse 2s ease-in-out infinite alternate; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 220" width="500" height="220">
+  <defs>
+    <!-- Hand-drawn wobbly line filter -->
+    <filter id="wobbly" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- Soft paper texture filter -->
+    <filter id="paperTexture" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
+    </filter>
+    <!-- Soft shadow for the pet -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset dx="2" dy="3" result="offsetBlur"/>
+      <feFlood flood-color="#c9bfab" flood-opacity="0.4" result="color"/>
+      <feComposite in="color" in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 
-    @keyframes float { 0% { transform: translateY(0px); } 100% { transform: translateY(-4px); } }
-    @keyframes blink { 0%, 95% { opacity: 1; } 96%, 100% { opacity: 0; } }
-    @keyframes walk { 0% { transform: translateY(0px); } 50% { transform: translateY(-2px); } }
-    @keyframes pulse { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;display=swap');
+    .hand-font { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; }
+    .doodle-text { font-family: 'Patrick Hand', cursive; fill: #8b7355; }
+
+    /* Gentle floating bob */
+    .bob { animation: bob 3s ease-in-out infinite; transform-origin: 125px 110px; }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Slow blink */
+    .blink { animation: blink 4s ease-in-out infinite; }
+    @keyframes blink {
+      0%, 42%, 46%, 100% { opacity: 1; }
+      44% { opacity: 0; }
+    }
+
+    /* Subtle breathing scale pulse */
+    .breathe { animation: breathe 3.5s ease-in-out infinite; transform-origin: 125px 110px; }
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    /* Twinkle for stars */
+    .twinkle { animation: twinkle 2.5s ease-in-out infinite; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* Floating heart */
+    .float-heart { animation: floatHeart 3s ease-in-out infinite; }
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-6px) scale(1.08); opacity: 0.9; }
+    }
   </style>
 
-  <!-- Terminal Window Background -->
-  <rect width="500" height="200" rx="8" class="bg"/>
-  <rect x="2" y="2" width="496" height="196" class="border"/>
+  <!-- Warm textured paper background -->
+  <rect width="500" height="220" rx="12" fill="#faf3e0" filter="url(#paperTexture)"/>
+  <!-- Subtle border like a torn notebook edge -->
+  <rect x="3" y="3" width="494" height="214" rx="10" fill="none" stroke="#d4c5a0" stroke-width="1.5" stroke-dasharray="8 4" filter="url(#wobbly)"/>
+
+  <!-- Doodled corner flourishes -->
+  <path d="M16,16 Q22,8 30,14 Q26,20 18,18" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
+  <path d="M484,16 Q478,8 470,14 Q474,20 482,18" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
+  <path d="M16,204 Q22,212 30,206 Q26,200 18,202" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
+  <path d="M484,204 Q478,212 470,206 Q474,200 482,202" fill="none" stroke="#c9bfab" stroke-width="1.2" filter="url(#wobbly)"/>
+
+  <!-- Pet creature -->
+  <g class="bob">
+    <g class="breathe" filter="url(#softShadow)">
+      <!-- Body (round blob) -->
+      <ellipse cx="125" cy="112" rx="38" ry="34" fill="#e8a87c" filter="url(#wobbly)"/>
+      <!-- Belly highlight -->
+      <ellipse cx="125" cy="118" rx="24" ry="18" fill="#f5dcc0" opacity="0.6" filter="url(#wobbly)"/>
+
+      <!-- Tiny ears -->
+      <ellipse cx="98" cy="86" rx="8" ry="10" fill="#e8a87c" filter="url(#wobbly)"/>
+      <ellipse cx="98" cy="86" rx="5" ry="6" fill="#d4a5a5" filter="url(#wobbly)"/>
+      <ellipse cx="152" cy="86" rx="8" ry="10" fill="#e8a87c" filter="url(#wobbly)"/>
+      <ellipse cx="152" cy="86" rx="5" ry="6" fill="#d4a5a5" filter="url(#wobbly)"/>
+
+      <!-- Open dot eyes with blink -->
+     <g class="blink">
+       <circle cx="113" cy="102" r="3.5" fill="#5d4037" filter="url(#wobbly)"/>
+       <circle cx="137" cy="102" r="3.5" fill="#5d4037" filter="url(#wobbly)"/>
+       <circle cx="114.5" cy="100.5" r="1" fill="#faf3e0"/>
+       <circle cx="138.5" cy="100.5" r="1" fill="#faf3e0"/>
+     </g>
+
+      <!-- Rosy cheeks -->
+      <ellipse cx="103" cy="112" rx="7" ry="5" fill="#d4a5a5" opacity="0.55" filter="url(#wobbly)"/>
+      <ellipse cx="147" cy="112" rx="7" ry="5" fill="#d4a5a5" opacity="0.55" filter="url(#wobbly)"/>
+
+      <!-- Mouth -->
+      <path d="M115,116 Q125,128 135,116" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round" filter="url(#wobbly)"/>
+
+      <!-- Tiny arms -->
+      <path d="M87,110 Q78,115 82,124" fill="none" stroke="#e8a87c" stroke-width="4" stroke-linecap="round" filter="url(#wobbly)"/>
+      <path d="M163,110 Q172,115 168,124" fill="none" stroke="#e8a87c" stroke-width="4" stroke-linecap="round" filter="url(#wobbly)"/>
+
+      <!-- Tiny feet -->
+      <ellipse cx="112" cy="145" rx="9" ry="5" fill="#e8a87c" filter="url(#wobbly)"/>
+      <ellipse cx="138" cy="145" rx="9" ry="5" fill="#e8a87c" filter="url(#wobbly)"/>
+    </g>
+  </g>
+
+  <!-- Decorative doodles -->
+  <!-- Happy: stars and a small cloud -->
+     <g filter="url(#wobbly)" class="twinkle">
+       <polygon points="78,55 80,49 82,55 88,55 83,59 85,65 80,61 75,65 77,59 72,55" fill="#e8a87c" opacity="0.8"/>
+     </g>
+     <g filter="url(#wobbly)" class="twinkle" style="animation-delay:0.5s;">
+       <polygon points="170,48 172,42 174,48 180,48 175,52 177,58 172,54 167,58 169,52 164,48" fill="#d4a5a5" opacity="0.7"/>
+     </g>
+     <!-- Cloud doodle -->
+     <g filter="url(#wobbly)" opacity="0.35">
+       <ellipse cx="60" cy="42" rx="12" ry="7" fill="#c9bfab"/>
+       <ellipse cx="72" cy="40" rx="10" ry="8" fill="#c9bfab"/>
+       <ellipse cx="80" cy="44" rx="9" ry="6" fill="#c9bfab"/>
+     </g>
+
+  <!-- Hand-drawn speech bubble -->
+  <g filter="url(#wobbly)">
+    <path d="M220,80 Q220,58 280,58 Q380,58 380,80 Q380,102 320,102 L270,102 L258,115 L262,102 Q220,102 220,80Z" fill="#fffdf5" stroke="#8b7355" stroke-width="1.5"/>
+  </g>
+  <text x="300" y="76" text-anchor="middle" class="hand-font" fill="#5d4037" font-size="12" filter="url(#wobbly)">i love solving puzzles with you!</text>
   
-  <!-- Top Bar -->
-  <rect x="2" y="2" width="496" height="24" fill="#1a1a1a" rx="4"/>
-  <circle cx="16" cy="14" r="4" fill="#FF5500"/>
-  <circle cx="32" cy="14" r="4" fill="#888888"/>
-  <circle cx="48" cy="14" r="4" fill="#888888"/>
-  <text x="250" y="16" text-anchor="middle" class="text-secondary">agent_pet_v1.sh</text>
 
-  <!-- Pet Container -->
-  <g class="float" transform="translate(60, 70)">
-    <!-- 16x16 Pixel Art Pet mapped to 80x80 (scale factor 5) -->
-    <!-- Head/Body -->
-    <path class="pixel" d="M25,10 h30 v10 h10 v30 h-10 v10 h-30 v-10 h-10 v-30 h10 z"/>
-    <!-- Eyes -->
-    <rect x="35" y="25" width="5" height="5" class="pixel-dark blink"/>
-    <rect x="55" y="25" width="5" height="5" class="pixel-dark blink"/>
-    <!-- Mouth -->
-    <rect x="40" y="40" width="15" height="5" class="pixel-dark"/>
-    <!-- Antenna -->
-    <rect x="45" y="-10" width="5" height="20" class="pixel"/>
-    <rect x="40" y="-15" width="15" height="5" class="pixel glow"/>
+  <!-- Stats area on the right -->
+  <g filter="url(#wobbly)">
+    <!-- Notebook label style -->
+    <rect x="320" y="125" width="155" height="70" rx="6" fill="#fffdf5" stroke="#c9bfab" stroke-width="1.2"/>
+    <!-- Ruled lines -->
+    <line x1="328" y1="148" x2="467" y2="148" stroke="#e2d9c8" stroke-width="0.7"/>
+    <line x1="328" y1="168" x2="467" y2="168" stroke="#e2d9c8" stroke-width="0.7"/>
   </g>
-  <g class="walk" transform="translate(60, 70)">
-    <!-- Legs -->
-    <rect x="30" y="60" width="10" height="10" class="pixel"/>
-    <rect x="55" y="60" width="10" height="10" class="pixel"/>
-  </g>
+  <text x="397" y="142" text-anchor="middle" class="hand-font" fill="#8b7355" font-size="11" filter="url(#wobbly)">mood: happy</text>
+  <text x="397" y="162" text-anchor="middle" class="hand-font" fill="#5d4037" font-size="14" filter="url(#wobbly)">problems solved</text>
+  <text x="397" y="186" text-anchor="middle" class="hand-font" fill="#e8a87c" font-size="26" font-weight="bold" filter="url(#wobbly)">16</text>
 
-  <!-- Message Box -->
-  <rect x="30" y="150" width="140" height="24" fill="#1a1a1a" rx="4"/>
-  <text x="100" y="166" text-anchor="middle" class="text-primary">> Learning...</text>
-
-  <!-- Divider -->
-  <line x1="200" y1="40" x2="200" y2="180" stroke="#333333" stroke-width="1"/>
-
-  <!-- Stats Dashboard -->
-  <text x="230" y="60" class="text-secondary">SYSTEM.STATUS</text>
-  <text x="230" y="80" class="text-primary">[ HAPPY ]</text>
-
-  <text x="230" y="120" class="text-secondary">PROBLEMS.SOLVED</text>
-  <text x="230" y="150" class="text-value">0016</text>
-
-  <text x="380" y="60" class="text-secondary">AI.ENGINE</text>
-  <text x="380" y="80" class="text-primary">GROQ/LLAMA-3.3</text>
-
-  <text x="380" y="120" class="text-secondary">AESTHETIC</text>
-  <text x="380" y="140" class="text-primary">CLAUDE_CODE</text>
+  <!-- Title -->
+  <text x="250" y="24" text-anchor="middle" class="hand-font" fill="#8b7355" font-size="14" filter="url(#wobbly)">~ my leetcode pet ~</text>
 </svg>
