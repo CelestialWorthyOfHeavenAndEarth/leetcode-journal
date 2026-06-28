@@ -49,13 +49,13 @@ public:
 
 ### Approach
 
-> This solution uses the Dutch National Flag algorithm, a variation of the quicksort algorithm. It initializes three pointers: low, mid, and high, representing the positions where the next 0, 1, and 2 should be placed respectively. The algorithm then iterates through the array, swapping elements as necessary to maintain the correct order. The mid pointer is used to scan the array, and the low and high pointers are used to track the positions of the next 0 and 2 respectively. By iterating through the array and swapping elements, the algorithm is able to sort the colors in-place.
+> This solution uses the Dutch National Flag algorithm, a variation of the quicksort algorithm. It initializes three pointers: low, mid, and high, representing the positions where the next 0, 1, and 2 should be placed respectively. The algorithm iterates through the array, swapping elements as necessary to maintain the correct order. The mid pointer is used to track the current element being processed, and the low and high pointers are used to track the positions of the next 0 and 2 respectively.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This algorithm works because it maintains a clear separation between the different colors, ensuring that all 0s are placed before all 1s, and all 1s are placed before all 2s. The use of three pointers allows the algorithm to efficiently scan the array and make the necessary swaps. The algorithm's correctness is also due to the fact that it only swaps elements when necessary, avoiding unnecessary operations.
+> This solution works because it ensures that all elements less than the current element are placed before it, and all elements greater than the current element are placed after it. The use of three pointers allows the algorithm to efficiently partition the array into three sections. The algorithm maintains the correct order by only incrementing the mid pointer when a 1 is encountered, and swapping elements when a 0 or 2 is encountered.
 
 </details>
 
@@ -65,22 +65,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` |  |
-| **Space:** `O(1)` |  |
+| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm only needs to iterate through the array once. |
+| **Space:** `O(1)` | , because the algorithm only uses a constant amount of space to store the pointers and does not use any additional data structures. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to use three pointers to separate the different colors, allowing for efficient sorting in-place.
+> The key insight is to use three pointers to track the positions of the next 0, 1, and 2, allowing the algorithm to efficiently partition the array into three sections.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When faced with a problem that requires sorting or partitioning an array based on certain conditions, look for opportunities to use multiple pointers to separate the different elements.
+> When faced with a problem that requires partitioning an array into multiple sections, consider using multiple pointers to track the positions of the next element in each section.
 
 <br>
 
