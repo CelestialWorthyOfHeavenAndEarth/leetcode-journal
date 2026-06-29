@@ -33,7 +33,7 @@
   <g transform="translate(240, 160)">
     <!-- Total -->
     <text x="0" y="10" class="stat-label">Total Solved</text>
-    <text x="0" y="45" class="stat-value">16</text>
+    <text x="0" y="45" class="stat-value">17</text>
     
     <!-- Easy -->
     <text x="140" y="10" class="stat-label">Easy</text>
@@ -41,7 +41,7 @@
     
     <!-- Medium -->
     <text x="280" y="10" class="stat-label">Medium</text>
-    <text x="280" y="45" class="stat-value">2</text>
+    <text x="280" y="45" class="stat-value">3</text>
     
     <!-- Hard -->
     <text x="420" y="10" class="stat-label">Hard</text>
