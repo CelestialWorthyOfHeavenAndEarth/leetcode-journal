@@ -3,7 +3,7 @@
 > A minimal, continuous learning log for algorithmic problem solving.
 
 <div align="center">
-  <img src=".github/tamagotchi.svg?v=1782684752928" alt="LeetCode Stats Dashboard" />
+  <img src=".github/tamagotchi.svg?v=1782694401207" alt="LeetCode Stats Dashboard" />
 </div>
 
 ## 📋 Overview
@@ -13,9 +13,9 @@ Tracking my progress on data structures and algorithms in a clean, Notion-inspir
 | Difficulty | Solved |
 | :--- | :--- |
 | **Easy** | 14 |
-| **Medium** | 2 |
+| **Medium** | 3 |
 | **Hard** | 0 |
-| **Total** | **16** |
+| **Total** | **17** |
 
 ## 📝 Recent Problems
 
@@ -24,6 +24,7 @@ Tracking my progress on data structures and algorithms in a clean, Notion-inspir
 | Arrays | 12 | 2 | 0 | 14 |
 | Linked Lists | 1 | 0 | 0 | 1 |
 | String | 1 | 0 | 0 | 1 |
+| Greedy | 0 | 1 | 0 | 1 |
 | Dynamic Programming | 0 | 0 | 0 | 0 |
 | Graphs | 0 | 0 | 0 | 0 |
 | Trees | 0 | 0 | 0 | 0 |
@@ -34,7 +35,6 @@ Tracking my progress on data structures and algorithms in a clean, Notion-inspir
 | Heap | 0 | 0 | 0 | 0 |
 | Backtracking | 0 | 0 | 0 | 0 |
 | Math | 0 | 0 | 0 | 0 |
-| Greedy | 0 | 0 | 0 | 0 |
 | Bit Manipulation | 0 | 0 | 0 | 0 |
 
 ---
