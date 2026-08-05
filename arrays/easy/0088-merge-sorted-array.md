@@ -56,13 +56,13 @@ public:
 
 ### Approach
 
-> The approach used here is to create a new array that combines the elements of the two input arrays in sorted order. This is achieved by comparing elements from the two arrays and adding the smaller one to the new array. The process continues until all elements from both arrays have been added to the new array. The resulting array is then assigned back to the first input array. This method ensures that the resulting array is also sorted in non-decreasing order.
+> The approach used here is to create a new array and compare elements from the two input arrays, adding the smaller one to the new array. This process continues until all elements from both arrays are exhausted. The function then replaces the contents of the first input array with the merged and sorted array. This method ensures that the resulting array is also sorted in non-decreasing order. The use of two pointers, one for each array, allows for efficient comparison and addition of elements to the new array.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it takes advantage of the fact that the input arrays are already sorted. By comparing elements from the two arrays and adding the smaller one to the new array, the resulting array is guaranteed to be sorted. The use of two pointers, one for each array, allows for efficient comparison and addition of elements.
+> This solution works because it takes advantage of the fact that the input arrays are already sorted, allowing for a simple comparison-based merge. By always choosing the smaller element from the two arrays, the resulting array is guaranteed to be sorted. The use of two while loops at the end ensures that any remaining elements from either array are appended to the result.
 
 </details>
 
@@ -80,14 +80,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to use two pointers to compare and merge the elements from the two sorted arrays into a new sorted array.
+> The key insight here is that merging two sorted arrays can be done efficiently by comparing elements and choosing the smaller one, leveraging the existing order in the input arrays.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with sorted arrays, look for opportunities to use two pointers to compare and merge elements efficiently.
+> When dealing with sorted arrays, look for opportunities to use comparison-based merging to create a new sorted array, as this can often be done in linear time.
 
 <br>
 
