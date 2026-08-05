@@ -56,13 +56,13 @@ public:
 
 ### Approach
 
-> The approach used here is to create a new array and fill it with the smallest elements from the two input arrays. This is done by maintaining two pointers, one for each array, and comparing the elements at these pointers to decide which one to add to the new array. The process continues until all elements from both arrays have been added to the new array. The new array is then assigned back to the first input array, effectively merging the two sorted arrays into one. This method ensures that the resulting array is also sorted in non-decreasing order.
+> The approach used here is to create a new array that combines the elements of the two input arrays in sorted order. This is achieved by comparing elements from the two arrays and adding the smaller one to the new array. The process continues until all elements from both arrays have been added to the new array. The resulting array is then assigned back to the first input array. This method ensures that the resulting array is also sorted in non-decreasing order.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it takes advantage of the fact that the input arrays are already sorted. By comparing elements from the two arrays and adding the smaller one to the new array, it maintains the sorted order. The use of two pointers allows for efficient traversal of both arrays.
+> This solution works because it takes advantage of the fact that the input arrays are already sorted. By comparing elements from the two arrays and adding the smaller one to the new array, the resulting array is guaranteed to be sorted. The use of two pointers, one for each array, allows for efficient comparison and addition of elements.
 
 </details>
 
@@ -72,22 +72,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(m + n)` | , where m and n are the sizes of the input arrays, because each element is visited once. |
-| **Space:** `O(m + n)` | , because a new array of the same total size as the input arrays is created. |
+| **Time:** `O(m + n)` |  |
+| **Space:** `O(m + n)` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key to this solution is recognizing that the input arrays are already sorted, allowing for a simple comparison-based approach to merge them.
+> The key insight is to use two pointers to compare and merge the elements from the two sorted arrays into a new sorted array.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with sorted arrays, look for opportunities to use comparison-based approaches to solve problems efficiently.
+> When dealing with sorted arrays, look for opportunities to use two pointers to compare and merge elements efficiently.
 
 <br>
 
