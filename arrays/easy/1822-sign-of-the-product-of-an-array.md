@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/sign-of-the-product-of-an-array/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-12-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -48,13 +48,13 @@ public:
 
 ### Approach
 
-> The solution starts by initializing a counter for negative numbers. It then iterates over the array, checking each number to see if it's zero, in which case the function immediately returns zero. If a number is negative, the counter is incremented. After iterating over the entire array, the function checks if the count of negative numbers is even or odd. This approach works because the sign of the product of an array is determined by the number of negative numbers in the array. The solution handles the case where the array contains a zero, which would make the product zero. The solution also correctly handles the case where there are an even or odd number of negative numbers.
+> The approach to solving this problem involves iterating through the given array to count the number of negative numbers and check for zeros. If a zero is found, the function immediately returns 0 because any number multiplied by zero is zero. The function then determines the sign of the product based on whether the count of negative numbers is even or odd. This is because the product of an even number of negative numbers is positive, and the product of an odd number of negative numbers is negative. The solution is straightforward and efficient, making it suitable for large arrays.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because the sign of the product of an array is determined by the number of negative numbers in the array. If there are an even number of negative numbers, the product will be positive. If there are an odd number of negative numbers, the product will be negative. The solution correctly handles these cases by checking the count of negative numbers.
+> This solution works because it correctly handles the cases where the array contains zeros and accurately determines the sign of the product based on the count of negative numbers. The use of a simple loop to iterate through the array makes the solution efficient and easy to understand. The solution also correctly handles the edge case where the array is empty or contains only one element.
 
 </details>
 
@@ -64,22 +64,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the size of the input array, because the solution iterates over the array once. |
-| **Space:** `O(1)` | , because the solution uses a constant amount of space to store the count of negative numbers. |
+| **Time:** `The time complexity is O(n) because the solution involves a single pass through the array, where n is the number of elements in the array.` |  |
+| **Space:** `The space complexity is O(1) because the solution uses a constant amount of space to store the count of negative numbers and does not use any data structures that scale with the size of the input array.` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The sign of the product of an array is determined by the parity of the count of negative numbers in the array.
+> The key insight is that the sign of the product of an array is determined by the count of negative numbers and the presence of zeros.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with problems involving the product of an array, look for patterns involving the count of negative numbers and the presence of zeros.
+> When dealing with problems involving the product of arrays, look for patterns involving the count of negative numbers and the presence of zeros to determine the sign of the result.
 
 <br>
 
