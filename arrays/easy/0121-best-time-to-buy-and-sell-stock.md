@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-06-28-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -43,13 +43,13 @@ public:
 
 ### Approach
 
-> The approach to solving this problem involves iterating through the array of stock prices and keeping track of the minimum price seen so far. At each step, we calculate the potential profit by subtracting the minimum price from the current price. We then update the maximum profit if the current profit is higher. This process continues until we have iterated through all the prices. The key idea is to find the optimal buy and sell points by considering all possible scenarios. By maintaining a running minimum price, we can efficiently calculate the maximum possible profit.
+> The solution starts by initializing two key variables: min_price to keep track of the minimum price encountered so far, and max_profit to store the maximum possible profit. It then iterates through the array of prices, updating min_price whenever it finds a lower price. For each price, it calculates the potential profit by subtracting the current min_price from the current price and updates max_profit if this new profit is higher. This approach ensures that we consider all possible buy and sell combinations without needing to explicitly compare every pair of prices.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it considers all possible buy and sell points, and it keeps track of the maximum profit seen so far. By updating the minimum price and maximum profit at each step, we ensure that we are considering the optimal buy and sell points. The solution has a simple and intuitive logic, making it easy to understand and implement.
+> This approach works because it effectively considers all possible buy and sell points by continuously updating the minimum price and maximum profit as it iterates through the prices. By doing so, it guarantees finding the maximum possible profit. The key is in the dynamic update of min_price and max_profit based on the current price.
 
 </details>
 
@@ -59,22 +59,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of days, because we are iterating through the array of prices once. |
-| **Space:** `O(1)` | , because we are using a constant amount of space to store the minimum price and maximum profit. |
+| **Time:** `O(n)` |  |
+| **Space:** `O(1)` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to maintain a running minimum price to efficiently calculate the maximum possible profit.
+> The maximum profit can be found by keeping track of the minimum price seen so far and updating the maximum profit whenever a new price allows for a higher profit.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with arrays and optimization problems, look for opportunities to maintain running minimum or maximum values to simplify the solution and improve efficiency.
+> When dealing with arrays and looking for maximum or minimum values over a range, consider using a single pass through the array and updating key variables dynamically.
 
 <br>
 
