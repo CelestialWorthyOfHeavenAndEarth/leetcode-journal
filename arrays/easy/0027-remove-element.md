@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/remove-element/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-14-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -43,13 +43,13 @@ public:
 
 ### Approach
 
-> The solution uses a two-pointer technique to iterate through the array and replace elements that are not equal to the target value. It maintains two pointers, one for reading and one for writing, allowing it to overwrite elements in-place. The reading pointer iterates through the entire array, while the writing pointer only moves when a non-target element is found. This approach ensures that all non-target elements are moved to the front of the array. The function then returns the count of non-target elements, which is the new length of the modified array.
+> The solution uses a two-pointer technique to iterate through the array and remove the target value. It maintains two pointers, one for the current element being processed and another to keep track of the position where the next non-target element should be placed. The algorithm iterates through the array, and whenever it encounters an element that is not equal to the target value, it places that element at the next available position. This approach effectively removes all occurrences of the target value from the array. The function then returns the number of elements that are not equal to the target value.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because it effectively partitions the array into two parts: elements that are not equal to the target value and elements that are equal to the target value. By only moving non-target elements to the front, it ensures that the order of non-target elements is preserved, and the count of non-target elements is accurate. The in-place modification also meets the problem's requirements.
+> This approach works because it ensures that all non-target elements are placed at the beginning of the array, and the number of these elements is tracked by the pointer. The algorithm has a linear time complexity because it only requires a single pass through the array. The correctness of the solution is guaranteed because it checks each element in the array and correctly handles the placement of non-target elements.
 
 </details>
 
@@ -59,22 +59,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of elements in the array, because the solution iterates through the array once. |
-| **Space:** `O(1)` | , because the solution only uses a constant amount of space to store the pointers and does not allocate any additional space that scales with the input size. |
+| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm requires a single pass through the array. |
+| **Space:** `O(1)` | , because the algorithm only uses a constant amount of space to store the pointers and does not allocate any additional space that scales with the input size. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key to this solution is using two pointers to separate the non-target elements from the target elements in a single pass.
+> The key insight is to use a two-pointer technique to separate the non-target elements from the target elements in a single pass.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with in-place array modifications, look for opportunities to use two-pointer techniques to simplify the solution and reduce space complexity.
+> When dealing with array modification problems, look for opportunities to use two-pointer techniques to simplify the solution and improve efficiency.
 
 <br>
 
