@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/find-the-array-concatenation-value/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-12-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -50,13 +50,13 @@ public:
 
 ### Approach
 
-> The solution starts by checking if the array has an odd number of elements. If it does, the middle element is added to the sum. Then, it iterates over the array from both ends, concatenating the elements and adding the resulting number to the sum. This approach ensures that all elements are used exactly once in the concatenation. The use of two pointers, one from the start and one from the end, allows for efficient iteration over the array.
+> The solution starts by checking if the array has an odd number of elements. If it does, the middle element is added to the sum. Then, it iterates over the array from both ends, concatenating the elements at the current positions and adding the resulting number to the sum. This process continues until all pairs of elements have been concatenated and added to the sum. The solution uses a simple and efficient approach to calculate the concatenation value of the array.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it correctly implements the concatenation of numbers and adds them to the sum. The use of string concatenation and conversion to integers allows for the correct calculation of the concatenated values. The solution also handles the case where the array has an odd number of elements by adding the middle element to the sum.
+> The solution works because it correctly handles both even and odd-length arrays, and it accurately calculates the concatenation value by converting the numbers to strings, concatenating them, and then converting the result back to an integer. This approach ensures that the numbers are concatenated correctly, regardless of their original order.
 
 </details>
 
@@ -74,14 +74,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to use two pointers to iterate over the array from both ends, allowing for efficient concatenation of the elements.
+> The key insight is to iterate over the array from both ends, concatenating the elements at the current positions to calculate the concatenation value.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with array concatenation problems, look for opportunities to use two pointers to iterate over the array from both ends.
+> When dealing with array problems that involve concatenation or manipulation of elements, look for opportunities to iterate over the array from multiple directions or use creative indexing techniques.
 
 <br>
 
