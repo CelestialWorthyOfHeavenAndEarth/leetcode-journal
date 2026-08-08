@@ -3,7 +3,7 @@
 > A minimal, continuous learning log for algorithmic problem solving.
 
 <div align="center">
-  <img src=".github/tamagotchi.svg?v=1786168279541" alt="LeetCode Stats Dashboard" />
+  <img src=".github/tamagotchi.svg?v=1786168598516" alt="LeetCode Stats Dashboard" />
 </div>
 
 ## 📋 Overview
