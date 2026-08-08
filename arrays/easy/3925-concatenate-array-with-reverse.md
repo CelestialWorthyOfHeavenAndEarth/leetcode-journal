@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/concatenate-array-with-reverse/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-14-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -33,13 +33,13 @@ class Solution:
 
 ### Approach
 
-> The approach to solving this problem involves using Python's list slicing feature to create a reversed copy of the input list, and then concatenating the original list with the reversed list. This is achieved by using the '+' operator, which concatenates two lists in Python. The '[::-1]' slice means start at the end of the list and end at position 0, move with the step -1, effectively reversing the list. The result is a new list that contains the original elements followed by their reverse. This solution is straightforward and easy to implement.
+> The approach here is to utilize Python's list slicing feature to create a reversed copy of the input array and then concatenate it with the original array. This is achieved by using the expression nums[::-1], which generates a reversed version of the nums list. The two lists are then concatenated using the '+' operator, resulting in a new list that meets the problem's requirements. This method is straightforward and efficient, taking advantage of Python's built-in features for list manipulation.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it correctly creates a reversed copy of the input list and then concatenates it with the original list, resulting in a new list that meets the problem's requirements. The use of list slicing and concatenation ensures that the solution is efficient and easy to understand.
+> This solution works because Python's list slicing feature allows for easy reversal of lists, and the '+' operator can be used to concatenate lists. The result is a new list that contains the original elements followed by their reversed counterparts. This correctly implements the desired behavior as specified in the problem.
 
 </details>
 
@@ -57,14 +57,14 @@ class Solution:
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight here is to use Python's list slicing feature to reverse the list, making the solution concise and efficient.
+> The key insight here is that Python's list slicing feature can be used to easily reverse a list, which simplifies the solution to the problem.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with array manipulation problems, look for opportunities to use slicing and concatenation to simplify the solution.
+> When working with arrays or lists, look for opportunities to use built-in features like slicing or concatenation to simplify the solution and improve efficiency.
 
 <br>
 
