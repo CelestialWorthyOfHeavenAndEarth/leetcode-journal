@@ -3,7 +3,7 @@
 > A minimal, continuous learning log for algorithmic problem solving.
 
 <div align="center">
-  <img src=".github/tamagotchi.svg?v=1785915397121" alt="LeetCode Stats Dashboard" />
+  <img src=".github/tamagotchi.svg?v=1786166992471" alt="LeetCode Stats Dashboard" />
 </div>
 
 ## 📋 Overview
@@ -12,16 +12,16 @@ Tracking my progress on data structures and algorithms in a clean, Notion-inspir
 ### 📊 Current Statistics
 | Difficulty | Solved |
 | :--- | :--- |
-| **Easy** | 15 |
+| **Easy** | 16 |
 | **Medium** | 3 |
 | **Hard** | 0 |
-| **Total** | **18** |
+| **Total** | **19** |
 
 ## 📝 Recent Problems
 
 | Topic | Easy | Medium | Hard | Total |
 | :--- | :---: | :---: | :---: | :---: |
-| Arrays | 13 | 2 | 0 | 15 |
+| Arrays | 14 | 2 | 0 | 16 |
 | Linked Lists | 1 | 0 | 0 | 1 |
 | String | 1 | 0 | 0 | 1 |
 | Greedy | 0 | 1 | 0 | 1 |
