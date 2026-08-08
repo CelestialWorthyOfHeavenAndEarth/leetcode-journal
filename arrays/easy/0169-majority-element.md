@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/majority-element/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-15-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -28,7 +28,6 @@ public:
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
         unordered_map<int, int>freq;
-        int max = INT_MIN;
         for(int x:nums){
                 freq[x]++;
         }
@@ -46,13 +45,13 @@ public:
 
 ### Approach
 
-> The solution uses an unordered map to store the frequency of each element in the array. It then iterates over the array again to find the element with a frequency greater than n/2. This approach is straightforward and easy to implement, but it requires two passes over the array. The use of an unordered map allows for efficient lookup and update of element frequencies. The solution assumes that a majority element always exists, which simplifies the problem.
+> The solution uses a frequency map to count the occurrences of each element in the array. It then iterates over the array again to find the element with a frequency greater than half the size of the array. This approach is straightforward and relies on the fact that a majority element always exists in the array. The use of an unordered map allows for efficient lookups and updates of element frequencies. The algorithm iterates over the array twice, once to count frequencies and once to find the majority element.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because it correctly counts the frequency of each element and then identifies the element with a frequency greater than n/2. The assumption that a majority element always exists ensures that the solution will always find a valid result. The use of an unordered map ensures efficient lookup and update of element frequencies.
+> The solution works because it correctly counts the frequency of each element and then identifies the element with a frequency greater than half the size of the array. This is guaranteed to be the majority element, as stated in the problem description. The algorithm's correctness relies on the existence of a majority element, which is assumed to always be the case.
 
 </details>
 
@@ -70,14 +69,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is that the majority element must exist and appear more than n/2 times, allowing us to use a simple frequency count to find it.
+> The majority element must exist and appear more than half the time, so counting frequencies is sufficient to find it.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with arrays and frequency counts, consider using an unordered map to efficiently store and lookup element frequencies.
+> When dealing with arrays and frequency-related problems, consider using a hash map to efficiently count and look up element frequencies.
 
 <br>
 
