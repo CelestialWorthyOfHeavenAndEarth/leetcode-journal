@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/find-the-highest-altitude/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-06-18-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -14,7 +14,7 @@
 > [!NOTE]
 > **Problem Statement**
 >
-> There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. The biker starts his trip on point 0 with altitude equal 0.
+> There is a biker going on a road trip. The road trip consists of n + 1 points at various altitudes. The biker starts his trip on point 0 with altitude equal 0.
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/find-the-highest-altitude/)**
 
@@ -44,13 +44,13 @@ public:
 
 ### Approach
 
-> The solution initializes two variables, max_alt and current_alt, to keep track of the maximum altitude and the current altitude, respectively. It then iterates through the gain array, updating the current altitude by adding the gain at each point. If the current altitude exceeds the maximum altitude, it updates the maximum altitude. This approach allows the solution to efficiently find the highest altitude by considering the cumulative effect of the gains. The solution returns the maximum altitude found. The use of a simple iterative approach makes the solution easy to understand and implement.
+> The approach to this problem involves iterating through the array of altitude gains and keeping track of the current altitude and the maximum altitude encountered so far. We start with a current altitude of 0 and a maximum altitude of 0. As we iterate through the array, we update the current altitude by adding the gain at each point. If the current altitude is greater than the maximum altitude, we update the maximum altitude. This process continues until we have iterated through the entire array. By the end, the maximum altitude will be the highest altitude encountered during the trip. The solution uses a simple iterative approach to solve the problem efficiently.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because it correctly calculates the cumulative altitude at each point and keeps track of the maximum altitude encountered. By iterating through the gain array, the solution considers all possible points and their corresponding altitudes, ensuring that the maximum altitude is found. The solution's correctness is based on the fact that it accurately models the biker's journey and the changes in altitude.
+> This solution works because it correctly keeps track of the current altitude and updates the maximum altitude whenever a higher altitude is encountered. The solution also handles the case where the altitude gain is negative, which would decrease the current altitude. By iterating through the entire array, the solution ensures that it considers all possible altitude gains and finds the highest altitude.
 
 </details>
 
@@ -60,22 +60,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of points in the gain array, because the solution iterates through the array once. |
-| **Space:** `O(1)` | , because the solution uses a constant amount of space to store the maximum and current altitudes, regardless of the size of the input array. |
+| **Time:** `O(n)` |  |
+| **Space:** `O(1)` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key to solving this problem is recognizing that the altitude at each point is the cumulative sum of the gains, and keeping track of the maximum altitude encountered.
+> The key insight is to keep track of the current altitude and update the maximum altitude whenever a higher altitude is encountered.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with problems that involve cumulative sums or running totals, look for opportunities to use iterative approaches that update variables based on the current state.
+> When dealing with problems that involve iterating through an array and keeping track of a maximum or minimum value, look for opportunities to use a simple iterative approach with a running maximum or minimum variable.
 
 <br>
 
