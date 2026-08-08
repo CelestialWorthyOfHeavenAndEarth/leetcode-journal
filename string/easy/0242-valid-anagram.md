@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/valid-anagram/)
 [![Topic](https://img.shields.io/badge/Topic-String-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-12-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -47,13 +47,13 @@ public:
 
 ### Approach
 
-> The approach used here is to count the frequency of each character in both strings and then compare these frequency counts. This is done using two unordered maps, one for each string, where the keys are the characters and the values are their respective frequencies. By iterating through each string, we increment the count of each character in its corresponding map. Finally, we compare the two maps for equality, which indicates whether the strings are anagrams of each other.
+> The solution uses two unordered maps to count the frequency of each character in the given strings s and t. It iterates over each character in both strings, incrementing the corresponding count in the maps. The approach then compares the two maps for equality, which determines if the strings are anagrams of each other. This method is straightforward and effectively solves the problem by considering the definition of an anagram, which requires the same characters with the same frequencies. The use of unordered maps allows for efficient counting and comparison.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because anagrams are simply rearrangements of the characters in a string, meaning they have the same characters but possibly in a different order. By comparing the frequency counts, we effectively ignore the order of characters and focus solely on their presence and quantity. If the frequency counts are equal, then the strings are anagrams.
+> This approach works because it accurately counts the frequency of each character in both strings and then checks if these frequencies are equal. If they are equal, it means that the strings are anagrams of each other. The unordered maps provide a way to efficiently store and compare the character frequencies.
 
 </details>
 
@@ -71,14 +71,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> Comparing character frequencies is a straightforward way to determine if two strings are anagrams.
+> Comparing the frequency counts of characters in two strings is a reliable way to determine if they are anagrams.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with string problems that involve character distribution, consider using frequency counts to simplify the comparison.
+> When dealing with string problems that involve character distributions, consider using frequency counting as a potential approach.
 
 <br>
 
