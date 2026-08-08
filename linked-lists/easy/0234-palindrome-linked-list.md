@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/palindrome-linked-list/)
 [![Topic](https://img.shields.io/badge/Topic-Linked%20Lists-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-06-22-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -63,13 +63,13 @@ public:
 
 ### Approach
 
-> The approach involves first traversing the linked list and storing its values in a vector. This allows us to easily compare elements from the start and end of the list, moving towards the center. By using two pointers, one at the start and one at the end of the vector, we can efficiently check if the list is a palindrome. The use of a vector simplifies the comparison process, as we can directly access elements by their index.
+> The approach used here is to first traverse the linked list and store its values in a vector. Then, we use two pointers, one starting from the beginning of the vector and one from the end, to compare the values. If all pairs of values match, the linked list is a palindrome. This method is straightforward and easy to implement. It involves a simple traversal of the linked list followed by a standard two-pointer technique. The use of a vector to store the values allows for efficient comparison.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because it effectively converts the linked list into a more manageable data structure, allowing for easy comparison of elements. By checking if the elements at corresponding positions from the start and end are equal, we can determine if the list is a palindrome. The two-pointer technique ensures that we only need to traverse the vector once.
+> This solution works because it effectively checks if the sequence of values in the linked list is the same when reversed. By comparing values from the start and end of the vector and moving towards the center, it covers all possible pairs of values that need to match for the list to be a palindrome. If any pair does not match, the function immediately returns false.
 
 </details>
 
@@ -87,14 +87,14 @@ public:
 > [!TIP]
 > **Key Insight**
 > 
-> Converting the linked list to a vector enables efficient comparison of elements from the start and end of the list
+> Converting the linked list into a vector allows for easy comparison of values from the start and end, simplifying the palindrome check.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with linked lists and needing to compare elements, consider converting the list to a more manageable data structure like a vector or array
+> When dealing with linked lists and needing to compare or manipulate values in a way that benefits from random access, consider converting the list into a vector or array first.
 
 <br>
 
