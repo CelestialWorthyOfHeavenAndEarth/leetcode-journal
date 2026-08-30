@@ -1,41 +1,49 @@
-# 📓 LeetCode Journal
-
-> A minimal, continuous learning log for algorithmic problem solving.
-
 <div align="center">
-  <img src=".github/tamagotchi.svg?v=1786171235918" alt="LeetCode Stats Dashboard" />
+
+# ⬡ LeetCode Journal
+
+*Automatically curated, AI-analysed solutions to LeetCode problems.*
+
+[![Total Solved](https://img.shields.io/badge/Total_Solved-20-blue?style=for-the-badge)](.)
+[![Easy](https://img.shields.io/badge/Easy-17-brightgreen?style=for-the-badge)](.)
+[![Medium](https://img.shields.io/badge/Medium-3-orange?style=for-the-badge)](.)
+[![Hard](https://img.shields.io/badge/Hard-0-red?style=for-the-badge)](.)
+
+<br>
+
+<img src=".github/tamagotchi.svg" alt="LeetCode Dashboard" width="780"/>
+
 </div>
 
-## 📋 Overview
-Tracking my progress on data structures and algorithms in a clean, Notion-inspired format. 
+<br>
 
-### 📊 Current Statistics
-| Difficulty | Solved |
-| :--- | :--- |
-| **Easy** | 17 |
-| **Medium** | 3 |
-| **Hard** | 0 |
-| **Total** | **20** |
+## 📊 Topic Breakdown
 
-## 📝 Recent Problems
+| Topic | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📋 Total |
+|:------|:-------:|:---------:|:-------:|:--------:|
+| [Arrays](arrays/) | 15 | 2 | 0 | 17 |
+| [Dynamic Programming](dynamic-programming/) | 0 | 0 | 0 | 0 |
+| [Graphs](graphs/) | 0 | 0 | 0 | 0 |
+| [Trees](trees/) | 0 | 0 | 0 | 0 |
+| [Linked Lists](linked-lists/) | 1 | 0 | 0 | 1 |
+| [Sliding Window](sliding-window/) | 0 | 0 | 0 | 0 |
+| [Binary Search](binary-search/) | 0 | 0 | 0 | 0 |
+| [Two Pointers](two-pointers/) | 0 | 0 | 0 | 0 |
+| [Stack](stack/) | 0 | 0 | 0 | 0 |
+| [Heap](heap/) | 0 | 0 | 0 | 0 |
+| [Backtracking](backtracking/) | 0 | 0 | 0 | 0 |
+| [Math](math/) | 0 | 0 | 0 | 0 |
+| [String](string/) | 1 | 0 | 0 | 1 |
+| [Greedy](greedy/) | 0 | 1 | 0 | 1 |
+| [Bit Manipulation](bit-manipulation/) | 0 | 0 | 0 | 0 |
+| **Total** | **17** | **3** | **0** | **20** |
 
-| Topic | Easy | Medium | Hard | Total |
-| :--- | :---: | :---: | :---: | :---: |
-| Arrays | 15 | 2 | 0 | 17 |
-| Linked Lists | 1 | 0 | 0 | 1 |
-| String | 1 | 0 | 0 | 1 |
-| Greedy | 0 | 1 | 0 | 1 |
-| Dynamic Programming | 0 | 0 | 0 | 0 |
-| Graphs | 0 | 0 | 0 | 0 |
-| Trees | 0 | 0 | 0 | 0 |
-| Sliding Window | 0 | 0 | 0 | 0 |
-| Binary Search | 0 | 0 | 0 | 0 |
-| Two Pointers | 0 | 0 | 0 | 0 |
-| Stack | 0 | 0 | 0 | 0 |
-| Heap | 0 | 0 | 0 | 0 |
-| Backtracking | 0 | 0 | 0 | 0 |
-| Math | 0 | 0 | 0 | 0 |
-| Bit Manipulation | 0 | 0 | 0 | 0 |
+<br>
 
 ---
-*Generated automatically by LeetCode Note Maker*
+
+<div align="center">
+
+*Curated with [LeetCode Journal](https://github.com/CelestialWorthyOfHeavenAndEarth/leetcode-journal) Chrome Extension*
+
+</div>
