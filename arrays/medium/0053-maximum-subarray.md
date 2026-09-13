@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Medium-orange?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/maximum-subarray/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-14-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-13-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -15,30 +15,63 @@
 > **Problem Statement**
 >
 > Given an integer array nums, find the subarray with the largest sum, and return its sum.
+> 
+>  
+> Example 1:
+> 
+> Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+> Output: 6
+> Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+> 
+> 
+> Example 2:
+> 
+> Input: nums = [1]
+> Output: 1
+> Explanation: The subarray [1] has the largest sum 1.
+> 
+> 
+> Example 3:
+> 
+> Input: nums = [5,4,-1,7,8]
+> Output: 23
+> Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
+> 
+> 
+>  
+> Constraints:
+> 
+> 
+> 	1 <= nums.length <= 105
+> 	-104 <= nums[i] <= 104
+> 
+> 
+>  
+> Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and con...
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/maximum-subarray/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
         int n = nums.size();
+        int max_so_far=INT_MIN;
         int bag=0;
-        int max_seen= INT_MIN;
         for(int i=0;i<n;i++){
             bag+=nums[i];
-            if(bag>max_seen){
-                max_seen=bag;
+            if(bag>max_so_far){
+                max_so_far=bag;
             }
             if(bag<0){
                 bag=0;
             }
-        }
-        return max_seen;
+        } 
+        return max_so_far;
     }
 };
 ```
@@ -47,13 +80,13 @@ public:
 
 ### Approach
 
-> The solution uses a technique called Kadane's algorithm, which scans the entire array and at each position finds the maximum sum of the subarray ending at that position. It maintains a running sum of the current subarray and updates the maximum sum seen so far. If the running sum becomes negative, it resets the running sum to zero, effectively starting a new subarray. This approach allows the algorithm to efficiently find the maximum subarray sum in a single pass through the array. The algorithm iterates through the array, updating the maximum sum and the running sum as it goes.
+> The solution uses Kadane's algorithm: iterate through the array while maintaining two variables – a running sum (bag) of the current candidate subarray and the best sum seen so far (max_so_far). At each element, add it to the running sum; if the running sum exceeds max_so_far, update max_so_far. If the running sum becomes negative, reset it to zero because any subarray starting with a negative total cannot contribute to a maximum sum later.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The algorithm works because it considers all possible subarrays and keeps track of the maximum sum seen so far. By resetting the running sum to zero when it becomes negative, the algorithm avoids including negative sums in the maximum subarray sum. This ensures that the algorithm finds the maximum subarray sum correctly.
+> At each index the algorithm guarantees that bag holds the maximum possible sum of a subarray ending at that index. max_so_far records the maximum of all such ending sums, which is exactly the global optimum. Resetting when bag < 0 discards subarrays that would only lower future sums.
 
 </details>
 
@@ -63,22 +96,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm makes a single pass through the array. |
-| **Space:** `O(1)` | , because the algorithm uses a constant amount of space to store the running sum and the maximum sum seen so far. |
+| **Time:** `O(n)` | each element is processed once in a single pass. |
+| **Space:** `O(1)` | only a few integer variables are used regardless of input size. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is that a negative running sum has no benefit in contributing to the maximum subarray sum, so it can be safely reset to zero.
+> The optimal subarray either extends the previous optimal ending subarray or starts fresh at the current element.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with array problems that involve finding a maximum or minimum sum, look for opportunities to use a running sum or a sliding window approach to efficiently scan the array and find the optimal solution.
+> Use a linear scan with a running aggregate that resets when it becomes detrimental (Kadane's pattern).
 
 <br>
 
