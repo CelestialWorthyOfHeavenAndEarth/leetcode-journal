@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/missing-number/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-05-14-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-13-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -15,12 +15,42 @@
 > **Problem Statement**
 >
 > Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+> 
+>  
+> Example 1:
+> 
+> 
+> Input: nums = [3,0,1]
+> 
+> Output: 2
+> 
+> Explanation:
+> 
+> n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+> 
+> 
+> Example 2:
+> 
+> 
+> Input: nums = [0,1]
+> 
+> Output: 2
+> 
+> Explanation:
+> 
+> n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+> 
+> 
+> Example 3:
+> 
+> 
+> Input: nums = [9,6,4,2,3,5,7,0,1]...
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/missing-number/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
 class Solution {
@@ -45,13 +75,13 @@ public:
 
 ### Approach
 
-> The solution starts by creating a frequency map of the numbers in the input array. It then iterates over the range of possible numbers from 0 to n (inclusive) and checks if each number is present in the frequency map. If a number is not present, it is the missing number. This approach relies on the fact that the input array contains distinct numbers in the range [0, n]. The solution uses an unordered map to store the frequency of each number, allowing for efficient lookups. The time complexity is linear due to the iteration over the input array and the range of possible numbers.
+> The solution builds an unordered_map (hash table) that records the frequency of each element in the input array. After populating the map, it iterates from 0 through n (inclusive) and returns the first index whose frequency is zero, which is the missing number. If no missing number is found (theoretically impossible given constraints), it returns -1.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because it correctly identifies the missing number by checking for the absence of a number in the frequency map. The use of an unordered map allows for efficient lookups, and the iteration over the range of possible numbers ensures that the missing number is found. The solution is correct because it handles all possible cases, including the case where the missing number is 0 or n.
+> Because the array contains all distinct numbers from 0 to n except one, the hash map will have a count of 1 for every present number and 0 for the missing one. Scanning the full range guarantees the missing value is identified.
 
 </details>
 
@@ -61,22 +91,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` |  |
-| **Space:** `O(n)` |  |
+| **Time:** `O(n)` | each element is processed once to fill the map and the range 0..n is scanned once. |
+| **Space:** `O(n)` | the unordered_map stores up to n+1 entries, proportional to the input size. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The missing number can be found by checking for the absence of a number in the frequency map.
+> A hash table gives constant‑time membership checks, turning the missing‑number search into a simple linear scan.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with arrays containing distinct numbers in a specific range, consider using a frequency map to identify missing or duplicate numbers.
+> Use a hash‑based frequency or presence map to detect missing or duplicate elements in linear time.
 
 <br>
 
