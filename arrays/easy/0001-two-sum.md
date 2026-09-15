@@ -5,7 +5,7 @@
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/two-sum/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-08-30-4caf84?style=for-the-badge&logo=github)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-15-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -64,11 +64,10 @@ public:
             mp[x]=i;
             i++;
         }
-        int rem = 0;
-        for(i=0;i<n;i++){
-            rem = target - nums[i];
-            if(mp.count(rem)&&mp[rem]!=i){
-                return {i,mp[rem]};
+        for(int j=0;j<n;j++){
+            int rem = target - nums[j];
+            if(mp.count(rem)&& mp[rem]!=j){
+                return {mp[rem],j};
             }
         }
         return {};
@@ -80,13 +79,13 @@ public:
 
 ### Approach
 
-> This solution uses an unordered_map to store each number from the array as a key and its index as the value. It then iterates through the array, computes the complement (target minus the current number), and checks if that complement exists in the map with a different index. If such a pair is found, it returns the two indices. The method ensures each element is processed only a constant number of times.
+> We first store each number with its index in an unordered map while iterating through the array. Then we iterate again, for each element we compute the complement (target‑num) and check if that complement exists in the map and is not the same index. If found we return the pair of indices.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> Because every number is recorded with its index, the complement lookup is O(1). When the complement is present and not the same element, the pair must sum to the target, guaranteeing correctness.
+> The map provides O(1) lookup for any value, so when we encounter a number its complement, if present, must form the unique solution. The index‑inequality check guarantees we don’t reuse the same element.
 
 </details>
 
@@ -96,22 +95,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | one pass to fill the map and a second pass to find the complement, each linear in the size of the array. |
-| **Space:** `O(n)` | the unordered_map stores up to n entries, one for each element. |
+| **Time:** `O(n)` | because we traverse the array twice with constant‑time map operations. |
+| **Space:** `O(n)` | to store the map of values to indices. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> Storing elements in a hash map enables constant‑time complement lookups, turning a quadratic search into linear time.
+> Store each value’s index and look up its required complement in constant time.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> Use a hash map to record elements and their indices when you need to find pairs (or subsets) that satisfy a specific sum or relationship.
+> Use a hash table to turn a two‑sum search into a constant‑time complement lookup.
 
 <br>
 
