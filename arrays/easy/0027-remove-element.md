@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/remove-element/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-20-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -15,12 +15,23 @@
 > **Problem Statement**
 >
 > Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+> 
+> Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+> 
+> 
+> 	Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+> 	Return k.
+> 
+> 
+> Custom Judge:
+> 
+> The judge will test your solution with the f...
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/remove-element/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
 class Solution {
@@ -43,13 +54,13 @@ public:
 
 ### Approach
 
-> The solution uses a two-pointer technique to iterate through the array and remove the target value. It maintains two pointers, one for the current element being processed and another to keep track of the position where the next non-target element should be placed. The algorithm iterates through the array, and whenever it encounters an element that is not equal to the target value, it places that element at the next available position. This approach effectively removes all occurrences of the target value from the array. The function then returns the number of elements that are not equal to the target value.
+> Iterate through the array with a fast index. Whenever the current element is not equal to the target value, copy it to the position indicated by a slow index and increment the slow index. After the loop, the slow index holds the count of kept elements and the first part of the array contains exactly those elements. Return this count as the new length.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because it ensures that all non-target elements are placed at the beginning of the array, and the number of these elements is tracked by the pointer. The algorithm has a linear time complexity because it only requires a single pass through the array. The correctness of the solution is guaranteed because it checks each element in the array and correctly handles the placement of non-target elements.
+> The slow pointer always points to the first free slot after all previously processed non‑val elements, guaranteeing that positions < slow are valid and contain no val. By processing each element once, we maintain the invariant that the prefix up to slow is the desired result.
 
 </details>
 
@@ -59,22 +70,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of elements in the array, because the algorithm requires a single pass through the array. |
-| **Space:** `O(1)` | , because the algorithm only uses a constant amount of space to store the pointers and does not allocate any additional space that scales with the input size. |
+| **Time:** `O(n)` | because each element is examined exactly once, where n is the length of nums. |
+| **Space:** `O(1)` | since the algorithm uses only a couple of integer variables regardless of input size. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight is to use a two-pointer technique to separate the non-target elements from the target elements in a single pass.
+> Treat the array as a write‑once buffer where a slow pointer overwrites unwanted values with good ones.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with array modification problems, look for opportunities to use two-pointer techniques to simplify the solution and improve efficiency.
+> In‑place two‑pointer (fast‑slow) technique for filtering elements from an array.
 
 <br>
 
