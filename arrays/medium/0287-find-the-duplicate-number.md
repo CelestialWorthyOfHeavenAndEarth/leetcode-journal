@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Medium-orange?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/find-the-duplicate-number/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-06-19-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-20-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -15,12 +15,43 @@
 > **Problem Statement**
 >
 > Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+> 
+> There is only one repeated number in nums, return this repeated number.
+> 
+> You must solve the problem without modifying the array nums and using only constant extra space.
+> 
+>  
+> Example 1:
+> 
+> Input: nums = [1,3,4,2,2]
+> Output: 2
+> 
+> 
+> Example 2:
+> 
+> Input: nums = [3,1,3,4,2]
+> Output: 3
+> 
+> 
+> Example 3:
+> 
+> Input: nums = [3,3,3,3,3]
+> Output: 3
+> 
+>  
+> Constraints:
+> 
+> 
+> 	1 <= n <= 105
+> 	nums.length == n + 1
+> 	1 <= nums[i] <= n
+> 	All the integers in nums appear only once except for precisely one integer which appears two...
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/find-the-duplicate-number/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
 class Solution {
@@ -42,13 +73,13 @@ public:
 
 ### Approach
 
-> The solution uses an unordered map to store the frequency of each number in the array. It iterates over the array, and for each number, it increments its frequency in the map. If the frequency of a number exceeds 1, it means that number is a duplicate, so the function returns that number. This approach works because the problem guarantees that there is exactly one duplicate number in the array. The solution takes advantage of this guarantee to find the duplicate number efficiently.
+> Iterate through the array while maintaining a hash map that records how many times each value has been seen. For each element, increment its count in the map; if the count becomes greater than one, immediately return that element as the duplicate. The loop stops as soon as the repeated number is found. This straightforward scan leverages constant‑time map operations to detect the first repeated entry.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The solution works because it correctly identifies the first number that appears more than once in the array, which is the duplicate number. The use of an unordered map allows for efficient lookups and frequency updates. The solution returns the correct duplicate number because it checks the frequency of each number as it iterates over the array.
+> The hash map stores the exact occurrence count for every value seen so far, so when a count exceeds one we have identified the only number that appears multiple times. Since the problem guarantees exactly one duplicate, the first value whose count reaches two must be the answer.
 
 </details>
 
@@ -58,22 +89,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `The time complexity is O(n) because the solution iterates over the array once, where n is the number of elements in the array.` |  |
-| **Space:** `The space complexity is O(n) because in the worst case, the solution stores every number in the array in the unordered map.` |  |
+| **Time:** `O(n)` | each element is processed once with O(1) average‑time map updates. |
+| **Space:** `O(n)` | in the worst case the map stores a distinct entry for each of the n+1 numbers before the duplicate is found. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> Using an unordered map to store frequencies allows for efficient detection of the duplicate number.
+> A frequency hash map lets you spot the duplicate the moment its count exceeds one.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with arrays and duplicates, consider using a frequency map to keep track of the occurrences of each number.
+> Use a hash‑based frequency counter to detect repeats in linear time.
 
 <br>
 
