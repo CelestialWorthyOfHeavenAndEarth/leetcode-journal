@@ -4,8 +4,8 @@
 
 *Automatically curated, AI-analysed solutions to LeetCode problems.*
 
-[![Total Solved](https://img.shields.io/badge/Total_Solved-27-blue?style=for-the-badge)](.)
-[![Easy](https://img.shields.io/badge/Easy-24-brightgreen?style=for-the-badge)](.)
+[![Total Solved](https://img.shields.io/badge/Total_Solved-28-blue?style=for-the-badge)](.)
+[![Easy](https://img.shields.io/badge/Easy-25-brightgreen?style=for-the-badge)](.)
 [![Medium](https://img.shields.io/badge/Medium-3-orange?style=for-the-badge)](.)
 [![Hard](https://img.shields.io/badge/Hard-0-red?style=for-the-badge)](.)
 
@@ -21,7 +21,7 @@
 
 | Topic | 🟢 Easy | 🟡 Medium | 🔴 Hard | 📋 Total |
 |:------|:-------:|:---------:|:-------:|:--------:|
-| [Arrays](arrays/) | 15 | 2 | 0 | 17 |
+| [Arrays](arrays/) | 16 | 2 | 0 | 18 |
 | [Dynamic Programming](dynamic-programming/) | 0 | 0 | 0 | 0 |
 | [Graphs](graphs/) | 0 | 0 | 0 | 0 |
 | [Trees](trees/) | 0 | 0 | 0 | 0 |
@@ -36,7 +36,7 @@
 | [String](string/) | 1 | 0 | 0 | 1 |
 | [Greedy](greedy/) | 0 | 1 | 0 | 1 |
 | [Bit Manipulation](bit-manipulation/) | 0 | 0 | 0 | 0 |
-| **Total** | **24** | **3** | **0** | **27** |
+| **Total** | **25** | **3** | **0** | **28** |
 
 <br>
 
