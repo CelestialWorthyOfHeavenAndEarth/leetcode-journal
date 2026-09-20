@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/valid-anagram/)
 [![Topic](https://img.shields.io/badge/Topic-String-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-20-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -15,12 +15,40 @@
 > **Problem Statement**
 >
 > Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+> 
+>  
+> Example 1:
+> 
+> 
+> Input: s = "anagram", t = "nagaram"
+> 
+> Output: true
+> 
+> 
+> Example 2:
+> 
+> 
+> Input: s = "rat", t = "car"
+> 
+> Output: false
+> 
+> 
+>  
+> Constraints:
+> 
+> 
+> 	1 <= s.length, t.length <= 5 * 104
+> 	s and t consist of lowercase English letters.
+> 
+> 
+>  
+> Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/valid-anagram/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
 class Solution {
@@ -47,13 +75,13 @@ public:
 
 ### Approach
 
-> The solution uses two unordered maps to count the frequency of each character in the given strings s and t. It iterates over each character in both strings, incrementing the corresponding count in the maps. The approach then compares the two maps for equality, which determines if the strings are anagrams of each other. This method is straightforward and effectively solves the problem by considering the definition of an anagram, which requires the same characters with the same frequencies. The use of unordered maps allows for efficient counting and comparison.
+> Traverse the first string and record the frequency of each character in a hash map. Then traverse the second string, decrementing the corresponding counts (or building a second map). Finally compare the two maps (or check that all counts are zero) to determine if the strings are anagrams.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because it accurately counts the frequency of each character in both strings and then checks if these frequencies are equal. If they are equal, it means that the strings are anagrams of each other. The unordered maps provide a way to efficiently store and compare the character frequencies.
+> Two strings are anagrams iff they contain exactly the same multiset of characters. By counting occurrences, we capture this multiset invariant and the equality check guarantees both strings match.
 
 </details>
 
@@ -63,22 +91,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n + m)` |  |
-| **Space:** `O(n + m)` |  |
+| **Time:** `O(n + m)` | each character of both strings is processed once, where n and m are the lengths of s and t. |
+| **Space:** `O(k)` | extra space proportional to the number of distinct characters (constant 26 for lowercase English, otherwise O(k) for Unicode). |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> Comparing the frequency counts of characters in two strings is a reliable way to determine if they are anagrams.
+> Counting character frequencies reduces the anagram test to a simple equality comparison of two frequency maps.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with string problems that involve character distributions, consider using frequency counting as a potential approach.
+> Use a hash map (or fixed-size array) to count occurrences when you need to compare multisets of elements.
 
 <br>
 
