@@ -4,8 +4,8 @@
 
 *Automatically curated, AI-analysed solutions to LeetCode problems.*
 
-[![Total Solved](https://img.shields.io/badge/Total_Solved-24-blue?style=for-the-badge)](.)
-[![Easy](https://img.shields.io/badge/Easy-21-brightgreen?style=for-the-badge)](.)
+[![Total Solved](https://img.shields.io/badge/Total_Solved-25-blue?style=for-the-badge)](.)
+[![Easy](https://img.shields.io/badge/Easy-22-brightgreen?style=for-the-badge)](.)
 [![Medium](https://img.shields.io/badge/Medium-3-orange?style=for-the-badge)](.)
 [![Hard](https://img.shields.io/badge/Hard-0-red?style=for-the-badge)](.)
 
@@ -32,11 +32,11 @@
 | [Stack](stack/) | 0 | 0 | 0 | 0 |
 | [Heap](heap/) | 0 | 0 | 0 | 0 |
 | [Backtracking](backtracking/) | 0 | 0 | 0 | 0 |
-| [Math](math/) | 3 | 0 | 0 | 3 |
+| [Math](math/) | 4 | 0 | 0 | 4 |
 | [String](string/) | 1 | 0 | 0 | 1 |
 | [Greedy](greedy/) | 0 | 1 | 0 | 1 |
 | [Bit Manipulation](bit-manipulation/) | 0 | 0 | 0 | 0 |
-| **Total** | **21** | **3** | **0** | **24** |
+| **Total** | **22** | **3** | **0** | **25** |
 
 <br>
 
