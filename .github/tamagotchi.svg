@@ -26,8 +26,8 @@
   <!-- Progress Bar Breakdown -->
   <g transform="translate(32, 82)">
     <rect x="0" y="0" width="716" height="8" rx="4" fill="#eaecef" />
-    <rect x="0" y="0" width="622.6086956521739" height="8" rx="4" fill="#00b8a3" />
-    <rect x="622.6086956521739" y="0" width="93.39130434782608" height="8" fill="#ffc01e" />
+    <rect x="0" y="0" width="626.5" height="8" rx="4" fill="#00b8a3" />
+    <rect x="626.5" y="0" width="89.5" height="8" fill="#ffc01e" />
     <rect x="716" y="0" width="0" height="8" rx="4" fill="#ff375f" />
   </g>
 
@@ -36,12 +36,12 @@
     <!-- Total -->
     <g transform="translate(0, 0)">
       <text x="0" y="0" class="stat-lbl">Total Solved</text>
-      <text x="0" y="32" class="stat-num">23</text>
+      <text x="0" y="32" class="stat-num">24</text>
     </g>
     <!-- Easy -->
     <g transform="translate(190, 0)">
       <text x="0" y="0" class="stat-lbl">Easy</text>
-      <text x="0" y="32" class="stat-num easy-num">20</text>
+      <text x="0" y="32" class="stat-num easy-num">21</text>
     </g>
     <!-- Medium -->
     <g transform="translate(370, 0)">
