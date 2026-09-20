@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Easy-brightgreen?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/concatenate-array-with-reverse/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-08-08-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-20-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -14,32 +14,72 @@
 > [!NOTE]
 > **Problem Statement**
 >
+> You are given an integer array nums of length n.
+> 
 > Construct a new array ans of length 2 * n such that the first n elements are the same as nums, and the next n elements are the elements of nums in reverse order.
+> 
+> Formally, for 0 <= i <= n - 1:
+> 
+> 
+> 	ans[i] = nums[i]
+> 	ans[i + n] = nums[n - i - 1]
+> 
+> 
+> Return an integer array ans.
+> 
+>  
+> Example 1:
+> 
+> 
+> Input: nums = [1,2,3]
+> 
+> Output: [1,2,3,3,2,1]
+> 
+> Explanation:
+> 
+> The first n elements of ans are the same as nums.
+> 
+> For the next n = 3 elements, each element is taken from nums in reverse order:
+> 
+> 
+> 	ans[3] = nums[2] = 3
+> 	ans[4] = nums[1] = 2
+> 	ans[5] = nums[0] = 1...
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/concatenate-array-with-reverse/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
-class Solution:
-    def concatWithReverse(self, nums: list[int]) -> list[int]:
-        return nums+nums[::-1]
-        
+class Solution {
+public:
+    vector<int> concatWithReverse(vector<int>& nums) {
+        int n  = nums.size();
+        vector<int>ar;
+        for(auto x:nums ){
+            ar.push_back(x);
+        } 
+        for(int i=n-1;i>=0;i--){
+            ar.push_back(nums[i]);
+        }
+        return ar;
+    }
+};
 ```
 
 <br>
 
 ### Approach
 
-> The approach here is to utilize Python's list slicing feature to create a reversed copy of the input array and then concatenate it with the original array. This is achieved by using the expression nums[::-1], which generates a reversed version of the nums list. The two lists are then concatenated using the '+' operator, resulting in a new list that meets the problem's requirements. This method is straightforward and efficient, taking advantage of Python's built-in features for list manipulation.
+> The solution constructs the result array by first appending all elements of the input array in their original order. It then iterates through the input array from the last index to the first, appending each element to the result. This effectively concatenates the original array with its reverse. The process uses a simple loop to handle the reversal without creating a separate reversed copy.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This solution works because Python's list slicing feature allows for easy reversal of lists, and the '+' operator can be used to concatenate lists. The result is a new list that contains the original elements followed by their reversed counterparts. This correctly implements the desired behavior as specified in the problem.
+> The algorithm correctly maps each index in the second half of the result array to the corresponding reversed index in the input array. By iterating backwards from n-1 to 0, it ensures that the element at position i + n in the result is exactly nums[n - i - 1], satisfying the problem's formal definition.
 
 </details>
 
@@ -49,22 +89,22 @@ class Solution:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` |  |
-| **Space:** `O(n)` |  |
+| **Time:** `O(n)` | because the algorithm performs two linear passes over the input array of size n, resulting in a total of 2n operations. |
+| **Space:** `O(n)` | because a new vector of size 2n is created to store the result, which is required by the problem constraints. |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key insight here is that Python's list slicing feature can be used to easily reverse a list, which simplifies the solution to the problem.
+> Concatenating an array with its reverse is simply a matter of iterating forward once and backward once.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When working with arrays or lists, look for opportunities to use built-in features like slicing or concatenation to simplify the solution and improve efficiency.
+> When asked to combine a sequence with its reverse, use two loops: one forward for the original and one backward for the reversed portion.
 
 <br>
 
