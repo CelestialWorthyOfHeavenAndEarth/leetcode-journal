@@ -4,8 +4,8 @@
 
 [![Difficulty](https://img.shields.io/badge/Medium-orange?style=for-the-badge&logoColor=white)](https://leetcode.com/problems/sort-colors/)
 [![Topic](https://img.shields.io/badge/Topic-Arrays-5865F2?style=for-the-badge)](.)
-[![Language](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
-[![Solved](https://img.shields.io/badge/Solved-2026-06-28-4caf84?style=for-the-badge&logo=github)](.)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](.)
+[![Solved](https://img.shields.io/badge/Solved-2026-09-21-4caf84?style=for-the-badge&logo=github)](.)
 
 </div>
 
@@ -14,13 +14,37 @@
 > [!NOTE]
 > **Problem Statement**
 >
-> Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+> You are given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+> 
+> We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+> 
+> You must solve this problem without using the library's sort function.
+> 
+>  
+> Example 1:
+> 
+> 
+> Input: nums = [2,0,2,1,1,0]
+> 
+> Output: [0,0,1,1,2,2]
+> 
+> Explanation:
+> 
+> The array has two 0s, two 1s, and two 2s. Sorting them in-place places all 0s first, then all 1s, then all 2s.
+> 
+> 
+> Example 2:
+> 
+> 
+> Input: nums = [2,0,1]
+> 
+> Output: [0...
 >
 > **[→ Open on LeetCode](https://leetcode.com/problems/sort-colors/)**
 
 <br>
 
-### Solution
+### Solution (C++)
 
 ```cpp
 class Solution {
@@ -49,13 +73,13 @@ public:
 
 ### Approach
 
-> This solution uses a three-pointer technique to sort the colors in-place. It initializes three pointers, low, mid, and high, to the start, start, and end of the array, respectively. The mid pointer is used to traverse the array, and based on the value at the mid index, the corresponding swap operation is performed. If the value is 0, it is swapped with the value at the low index, and both low and mid pointers are incremented. If the value is 1, only the mid pointer is incremented. If the value is 2, it is swapped with the value at the high index, and the high pointer is decremented.
+> The solution to the Sort Colors problem uses a divide-and-conquer strategy. We divide the array into three sections: left (0s), middle (1s), and right (2s). We iterate through the array from left to right and swap adjacent elements if they have different colors. This process continues until the middle pointer reaches the end of the array. At this point, the array is sorted. The algorithm uses constant extra space.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> This approach works because it ensures that all 0s are moved to the left of the array, all 1s are in the middle, and all 2s are moved to the right. The three-pointer technique allows for efficient sorting in a single pass through the array. The swap operations maintain the relative order of the colors.
+> The algorithm works because it maintains two pointers (low and high) to divide the array into three sections: left (0s), middle (1s), and right (2s). By swapping adjacent elements with different colors, we ensure that the array is sorted. The algorithm uses constant extra space.
 
 </details>
 
@@ -65,22 +89,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `O(n)` | , where n is the number of elements in the array, because the solution only requires a single pass through the array. |
-| **Space:** `O(1)` | , because the solution only uses a constant amount of space to store the pointers and does not require any additional data structures. |
+| **Time:** `The time complexity of this solution is O(n), where n is the size of the input array. The algorithm iterates through the array once and performs constant swaps, resulting in a linear time complexity.` |  |
+| **Space:** `The solution uses constant extra space as it only maintains two pointers (low and high) to divide the array into sections. This ensures that the algorithm uses constant extra space.` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The key to this solution is the use of three pointers to divide the array into three sections, allowing for efficient sorting of the colors in a single pass.
+> The Sort Colors problem is a classic divide-and-conquer problem. By dividing the array into sections and swapping adjacent elements with different colors, we ensure that the array is sorted. The algorithm uses constant extra space.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> When dealing with problems that require sorting or partitioning an array based on certain conditions, look for opportunities to use multiple pointers to divide the array into sections and simplify the problem.
+> Divide-and-conquer approach: Divide the array into sections, swap adjacent elements with different colors, and continue iterating until the middle pointer reaches the end of the array.
 
 <br>
 
