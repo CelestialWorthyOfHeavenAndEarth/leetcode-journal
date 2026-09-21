@@ -73,13 +73,13 @@ public:
 
 ### Approach
 
-> The solution to the Sort Colors problem uses a divide-and-conquer strategy. We divide the array into three sections: left (0s), middle (1s), and right (2s). We iterate through the array from left to right and swap adjacent elements if they have different colors. This process continues until the middle pointer reaches the end of the array. At this point, the array is sorted. The algorithm uses constant extra space.
+> The solution uses a two-pointer approach to sort the array in-place. Two pointers, low and mid, are used to traverse the array. The algorithm compares the elements at mid and low indices. If the element at mid is 0, it swaps it with the element at low, increments low, and decrements high. This ensures that all 0s are moved to the left side of the array. If the element at mid is 1, it increments mid. If the element at mid is 2, it swaps it with the element at high, increments high, and decrements low. This ensures that all 1s and 2s are moved to the right side of the array. The algorithm continues until the mid pointer reaches the end of the array. The time complexity is O(n), where n is the size of the array. The space complexity is O(1), as we only use a constant amount of space for the two pointers.
 
 <details>
 <summary><strong>Why It Works (Click to expand)</strong></summary>
 <br>
 
-> The algorithm works because it maintains two pointers (low and high) to divide the array into three sections: left (0s), middle (1s), and right (2s). By swapping adjacent elements with different colors, we ensure that the array is sorted. The algorithm uses constant extra space.
+> The algorithm works by maintaining two pointers, low and high, to traverse the array. The algorithm compares the elements at mid and low indices. If the element at mid is 0, it swaps it with the element at low, increments low, and decrements high. This ensures that all 0s are moved to the left side of the array. If the element at mid is 1, it increments mid. If the element at mid is 2, it swaps it with the element at high, increments high, and decrements low. This ensures that all 1s and 2s are moved to the right side of the array. The algorithm continues until the mid pointer reaches the end of the array. The time complexity is O(n), where n is the size of the array. The space complexity is O(1), as we only use a constant amount of space for the two pointers.
 
 </details>
 
@@ -89,22 +89,22 @@ public:
 
 | Bound | Explanation |
 |:--|:--|
-| **Time:** `The time complexity of this solution is O(n), where n is the size of the input array. The algorithm iterates through the array once and performs constant swaps, resulting in a linear time complexity.` |  |
-| **Space:** `The solution uses constant extra space as it only maintains two pointers (low and high) to divide the array into sections. This ensures that the algorithm uses constant extra space.` |  |
+| **Time:** `O(n)` |  |
+| **Space:** `O(1)` |  |
 
 <br>
 
 > [!TIP]
 > **Key Insight**
 > 
-> The Sort Colors problem is a classic divide-and-conquer problem. By dividing the array into sections and swapping adjacent elements with different colors, we ensure that the array is sorted. The algorithm uses constant extra space.
+> The algorithm maintains two pointers, low and high, to traverse the array. By swapping, incrementing low, and decrementing high, the algorithm moves elements of the same color to their correct positions in the array. The algorithm continues until the mid pointer reaches the end of the array. The time complexity is O(n), where n is the size of the array. The space complexity is O(1), as we only use a constant amount of space for the two pointers.
 
 <br>
 
 > [!IMPORTANT]
 > **Pattern to Remember**
 >
-> Divide-and-conquer approach: Divide the array into sections, swap adjacent elements with different colors, and continue iterating until the middle pointer reaches the end of the array.
+> Identify repeating subproblems or optimal substructure.
 
 <br>
 
