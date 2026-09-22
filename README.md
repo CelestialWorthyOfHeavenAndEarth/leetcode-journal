@@ -4,9 +4,9 @@
 
 *Automatically curated, AI-analysed solutions to LeetCode problems.*
 
-[![Total Solved](https://img.shields.io/badge/Total_Solved-30-blue?style=for-the-badge)](.)
+[![Total Solved](https://img.shields.io/badge/Total_Solved-31-blue?style=for-the-badge)](.)
 [![Easy](https://img.shields.io/badge/Easy-26-brightgreen?style=for-the-badge)](.)
-[![Medium](https://img.shields.io/badge/Medium-4-orange?style=for-the-badge)](.)
+[![Medium](https://img.shields.io/badge/Medium-5-orange?style=for-the-badge)](.)
 [![Hard](https://img.shields.io/badge/Hard-0-red?style=for-the-badge)](.)
 
 <br>
@@ -28,7 +28,7 @@
 | [Linked Lists](linked-lists/) | 1 | 0 | 0 | 1 |
 | [Sliding Window](sliding-window/) | 0 | 0 | 0 | 0 |
 | [Binary Search](binary-search/) | 1 | 0 | 0 | 1 |
-| [Two Pointers](two-pointers/) | 0 | 0 | 0 | 0 |
+| [Two Pointers](two-pointers/) | 0 | 1 | 0 | 1 |
 | [Stack](stack/) | 0 | 0 | 0 | 0 |
 | [Heap](heap/) | 0 | 0 | 0 | 0 |
 | [Backtracking](backtracking/) | 0 | 0 | 0 | 0 |
@@ -36,7 +36,7 @@
 | [String](string/) | 1 | 0 | 0 | 1 |
 | [Greedy](greedy/) | 0 | 1 | 0 | 1 |
 | [Bit Manipulation](bit-manipulation/) | 1 | 0 | 0 | 1 |
-| **Total** | **26** | **4** | **0** | **30** |
+| **Total** | **26** | **5** | **0** | **31** |
 
 <br>
 
